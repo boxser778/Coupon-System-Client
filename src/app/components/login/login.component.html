@@ -1,0 +1,63 @@
+<!-- <form>
+
+  <label>Username: </label>
+  <input type="text" name="username" [(ngModel)]="cerdintials.username">
+  <br><br>
+
+  <label>Password: </label>
+  <input type="password" name="password" [(ngModel)]="cerdintials.password">
+  <br><br>
+
+  <label for id="type1">choose your Client Type: </label>
+  <select id="clientType" name="clientType" [(ngModel)] = "cerdintials.type">
+    <option *ngFor="let type of clientTypes" [ngValue]="type">{{type}}</option>
+  </select>
+  <br><br>
+
+  <button (click)="login()" type="submit">Login</button>
+  <button (click)="logout()">Logout</button>
+
+</form> -->
+
+
+
+<<<<<<< HEAD
+
+<section>
+  <div id="loginForm">
+      <form (ngSubmit)="onSubmit()" #f="ngForm" action="login" method="post">
+          <br>
+        <p id="pp">Please enter a username and password:</p>
+        <label for id="name">Name: </label>
+        <input type="text" id="username" ngModel name="username" required  placeholder="Enter Your Name...">
+      <br>
+         <label for id="password">Password: </label>
+        <input type="password" id="password" ngModel name="password" password required placeholder="Enter Your password...">
+      <br>
+  
+        <label for id="type1">choose your Client Type: </label>
+        <select id="clientType" name="clientType" ngModel>
+        <option selected disabled>Select Type</option>
+        <option value="ADMIN">ADMIN</option>
+        <option value="COMPANY">COMPANY</option>
+        <option value="CUSTOMER">CUSTOMER</option>
+        </select>
+      
+        <h3><button type="submit" class="button">LOGIN 	<i class="fa fa-user-circle-o" style="font-size:30px;"></i></button>
+        <button type="reset" class="button"	>RESET	<i class="fa fa-eraser" style="font-size:30px;"></i></button></h3>
+      
+      </form>
+      <!-- <img src="/assets/images/coupon.jpg" [width]="imageWidth"> -->
+    </div>
+  <!-- <div>
+    <button (click)="decreaseWidth()">-</button>
+    <button (click)="resetWidth()">=</button>
+    <button (click)="increaseWidth()">+</button>
+  </div> -->
+  </section>
+=======
+  <button (click)="loginDemo()" >Login</button>
+  <button (click)="logout()" >Logout</button> |
+
+</form>
+>>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f

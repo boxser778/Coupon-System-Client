@@ -1,0 +1,14 @@
+<h2>Are you sure you want to delete this customer?</h2>
+
+
+<div *ngIf = "customer">
+  <h3>Id: {{customer.id}}</h3>
+  <h3>Customer Name: {{customer.customerName}}</h3>
+  <h3>Customer Password: {{customer.customerPassword}}</h3>
+</div>
+
+
+<br>
+
+<button (click) = "deleteCustomer()">Sure! Delete This Customer</button>
+<button (click) = "cancelDelete()" >No! Back to List</button>

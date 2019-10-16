@@ -1,0 +1,16 @@
+<h1>Update Customer</h1>
+
+<form *ngIf = "customer">
+  <br>  
+  <h3>new Name:</h3>
+  <input type="text" customerName = "name" [(ngModel)] = "customer.customerName" [ngModelOptions]="{standalone: true}" placeholder = "customerName...">
+  <br>
+  <h3>new Password:</h3>
+    <input type="text" customerPassword = "password" [(ngModel)] = "customer.customerPassword" [ngModelOptions]="{standalone: true}" placeholder = "customerPassword...">
+   <br>
+   <br>
+    <button (click) = "updateCustomer()">Update Customer</button>
+  </form>
+  <br>
+
+<a routerLink = "/customers">Back to List</a>

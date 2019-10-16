@@ -1,0 +1,13 @@
+export enum couponType {
+
+  FOOD = 'FOOD',
+  RESTURANTS = 'RESTURANTS',
+  HEALTH = 'HEALT',
+  SPORTS = 'SPORTS',
+  CAMPING = 'CAMPING',
+  TRAVELING = 'TRAVELING',
+  DRINKS = 'DRINKS',
+  CLOTHING = 'CLOTHING',
+  VEHICLE = 'VEHICLE'
+
+}

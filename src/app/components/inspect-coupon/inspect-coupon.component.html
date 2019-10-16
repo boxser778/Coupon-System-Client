@@ -1,0 +1,15 @@
+<h2>Coupon Information</h2>
+
+<div *ngIf = "coupon">
+<h3>Coupon ID: {{coupon.id}}</h3>
+<h3>Coupon Title: {{coupon.title}}</h3>
+<h3>Coupon Picture: {{coupon.picture}}</h3>
+<h3>Coupon Amount: {{coupon.amount}}</h3>
+<h3>Coupon Price: {{coupon.price}}</h3>
+<h3>Coupon Start Date: {{coupon.startDate}}</h3>
+<h3>Coupon End Date: {{coupon.endDate}}</h3>
+<h3>Coupon Picture: {{coupon.type}}</h3>
+<h3>Coupon Price: {{coupon.msg}}</h3>
+</div>
+<br>
+<a routerLink = "/coupons">Back to List</a>

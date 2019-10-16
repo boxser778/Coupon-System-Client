@@ -1,0 +1,47 @@
+<h2>Add New Company</h2>
+
+<form>
+      <input type="text" Amount="amount" [(ngModel)]="coupon.amount" [ngModelOptions]="{standalone: true}"
+            placeholder="amount...">
+      <br>
+      <input type="text" EndDate="endDate" [(ngModel)]="coupon.endDate" [ngModelOptions]="{standalone: true}"
+            placeholder="endDate(ex:2006-02-01)...">
+      <br>
+      <input type="text" Messege="msg" [(ngModel)]="coupon.msg" [ngModelOptions]="{standalone: true}"
+            placeholder="msg...">
+      <br>
+      <input type="text" Picture="picture" [(ngModel)]="coupon.picture" [ngModelOptions]="{standalone: true}"
+            placeholder="picture...">
+      <br>
+      <input type="text" Price="price" [(ngModel)]="coupon.price" [ngModelOptions]="{standalone: true}"
+            placeholder="price...">
+      <br>
+      <input type="text" StartDate="startDate" [(ngModel)]="coupon.startDate" [ngModelOptions]="{standalone: true}"
+            placeholder="startDate(ex:2000-3-25)...">
+      <br>
+      <input type="text" Title="title" [(ngModel)]="coupon.title" [ngModelOptions]="{standalone: true}"
+            placeholder="title(exemple:!!thisCoupon are 50% off only for today....)...">
+      <br>
+
+      <!-- <tr *ngFor="let currency of currencyList" [(ngModel)]="selectedType"> -->
+      <td>
+
+            <!-- <input name="couponType" type="" [(ngModel)]="selectedType" [value]="currency"> -->
+
+
+            <!-- <select [(ngModel)]="couponType.type"> -->
+            <!-- <select *ngFor="let type of couponType"> -->
+            <select [(ngModel)]="coupon.type" [ngModelOptions]="{standalone: true}">
+                  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{c.value}}</option>
+            </select>
+            <button (click)="addCoupon()">Add Company</button>
+</form>
+
+
+<br>
+<!-- <img src="/assets/images/coupon.jpg" [width]="imageWidth"> -->
+<!-- <a routerLink = "/admin" class="button"><img></a> -->
+<!-- <a routerLink = "/admin" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" class="material-icons">arrow_back</a> -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<a class="material-icons" routerLink="/admin">arrow_back</a>
+<!-- <a routerLink = "/admin">Go Back</a> -->
