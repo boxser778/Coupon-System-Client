@@ -1,5 +1,4 @@
 nav{
-<<<<<<< HEAD
 	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
 	box-shadow:inset 0px 1px 0px 0px #bee2f9;
@@ -38,9 +37,4 @@ nav{
 .myButton:active {
 	position:relative;
 	top:1px;
-=======
-    position: absolute;
-    top:10px;
-    right:10px;
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f
 }

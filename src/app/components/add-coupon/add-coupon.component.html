@@ -1,26 +1,33 @@
 <h2>Add New Company</h2>
 
 <form>
+      <label>Amount: </label> 
       <input type="text" Amount="amount" [(ngModel)]="coupon.amount" [ngModelOptions]="{standalone: true}"
-            placeholder="amount...">
+      placeholder="Amount of coupons in stock">
       <br>
-      <input type="text" EndDate="endDate" [(ngModel)]="coupon.endDate" [ngModelOptions]="{standalone: true}"
-            placeholder="endDate(ex:2006-02-01)...">
-      <br>
+      <label>Message: </label>
       <input type="text" Messege="msg" [(ngModel)]="coupon.msg" [ngModelOptions]="{standalone: true}"
-            placeholder="msg...">
+            placeholder="some info on coupon">
       <br>
+      <label>Picture: </label>
       <input type="text" Picture="picture" [(ngModel)]="coupon.picture" [ngModelOptions]="{standalone: true}"
-            placeholder="picture...">
+            placeholder="Link for Image">
       <br>
+      <label>Price: </label>
       <input type="text" Price="price" [(ngModel)]="coupon.price" [ngModelOptions]="{standalone: true}"
-            placeholder="price...">
+      placeholder="For Single Coupon">
       <br>
-      <input type="text" StartDate="startDate" [(ngModel)]="coupon.startDate" [ngModelOptions]="{standalone: true}"
-            placeholder="startDate(ex:2000-3-25)...">
+      <label>Start Date: </label>
+      <input type="date" StartDate="startDate" [(ngModel)]="coupon.startDate" [ngModelOptions]="{standalone: true}"
+            placeholder="ex:00-00-0000">
       <br>
+      <label>End Date: </label>
+      <input type="date" EndDate="endDate" [(ngModel)]="coupon.endDate" [ngModelOptions]="{standalone: true}"
+      placeholder="ex:00-00-0000">
+      <br>
+      <label>Title: </label>
       <input type="text" Title="title" [(ngModel)]="coupon.title" [ngModelOptions]="{standalone: true}"
-            placeholder="title(exemple:!!thisCoupon are 50% off only for today....)...">
+            placeholder="ex:50% off Tshirts">
       <br>
 
       <!-- <tr *ngFor="let currency of currencyList" [(ngModel)]="selectedType"> -->
@@ -31,6 +38,7 @@
 
             <!-- <select [(ngModel)]="couponType.type"> -->
             <!-- <select *ngFor="let type of couponType"> -->
+                        <label>Type Of Coupon: </label>
             <select [(ngModel)]="coupon.type" [ngModelOptions]="{standalone: true}">
                   <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{c.value}}</option>
             </select>

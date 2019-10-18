@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import { Component } from '@angular/core';
 // import { Credintials } from 'src/models/credintials';
 // import { LoginService } from 'src/services/login.service';
@@ -80,19 +79,12 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ResponseCodes } from 'src/models/ResponseCodes';
 import { LoginServiceService } from 'src/services/loginServiceService';
-=======
-import { Component } from "@angular/core";
-import { Credintials } from "src/models/credintials";
-import { LoginService } from "src/services/login.service";
-import { Router } from "@angular/router";
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
-<<<<<<< HEAD
 export class LoginComponent implements OnInit {
 
   public imageWidth: number;
@@ -110,49 +102,6 @@ export class LoginComponent implements OnInit {
   }
   public decreaseWidth(): void {
     this.imageWidth -= 10;
-=======
-export class LoginComponent {
-  public cerdintials = new Credintials();
-
-  public constructor(
-    public loginservice: LoginService,
-    private router: Router
-  ) {}
-
-  //real server:
-  public login(): void {
-    this.loginservice.isExist(this.cerdintials).subscribe(loginResult => {
-      if (!loginResult.isLoggedIn) {
-        alert("incorrect username and password!!!!");
-      } else {
-        this.loginservice.isLoggedIn = true;
-        this.loginservice.type = loginResult.type;
-
-        if (loginResult.type === "customer") {
-          this.router.navigate(["/customer"]);
-        } else if (loginResult.type === "company") {
-          this.router.navigate(["/company"]);
-        } else if (loginResult.type === "admin") {
-          this.router.navigate(["/admin"]);
-        }
-      }
-    });
-  }
-
-  //demo server:
-  public loginDemo(): void {
-    if (this.loginservice.isExistDemo(this.cerdintials)) {
-      if (this.cerdintials.type === "customer") {
-        this.router.navigate(["/customer"]);
-      } else if (this.cerdintials.type === "company") {
-        this.router.navigate(["/company"]);
-      } else if (this.cerdintials.type === "admin") {
-        this.router.navigate(["/admin"]);
-      }
-    } else {
-      alert("incorrect username and password!!!!");
-    }
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f
   }
   public resetWidth(): void {
     this.imageWidth = 250;
@@ -163,7 +112,6 @@ export class LoginComponent {
     let password = this.userLoginForm.value.password;
     let clientType = this.userLoginForm.value.clientType;
 
-<<<<<<< HEAD
     this.loginService.login(username, password, clientType).subscribe(res => {
         if (clientType === "ADMIN") { this.router.navigate(["/admin"]) //navigate to admin page
           if (res.status === ResponseCodes.OK) { this.loginService.token = res.body; localStorage.setItem("token", res.body); this.loginService.setAdminUser(); console.log("admin is logged in !"); console.log(this.loginService.token)}
@@ -190,6 +138,4 @@ export class LoginComponent {
       this.obsSubscription.unsubscribe();
     }
   }
-=======
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f
 }

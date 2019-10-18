@@ -4,7 +4,6 @@
 <table>
 
 <tr> 
-<<<<<<< HEAD
 <th>Company Name</th>
 <th>Email</th>
 <th>Password</th>
@@ -31,26 +30,3 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <a class="material-icons" routerLink="/admin">arrow_back</a>
-=======
-<th>Id</th>
-<th>password</th>
-<th>email</th>
-<th>comp_Name</th>
-<th>update</th>
-<th>delete</th>
-</tr>
-
-<tr *ngFor="let c of companys">
-<td>{{c.id}}</td>
-<td>{{c.password}}</td>
-<td>{{c.email}}</td>
-<td>{{c.comp_Name}}</td>
-<td>
-<a routerLink = "/companys/edit/{{c.id}}">update</a>
-</td>
-<td>
-<a routerLink = "/companys/delete/{{c.id}}">delete</a>
-</td>
-</tr>
-</table>
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f

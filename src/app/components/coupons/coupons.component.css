@@ -21,7 +21,6 @@ tr:nth-child(odd){
 tr:first-child{
     background-color: lightgray;
 }
-<<<<<<< HEAD
 
 /* nav{
 	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
@@ -89,5 +88,3 @@ nav {
   .round {
 	border-radius: 50%;
   }
-=======
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f

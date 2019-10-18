@@ -1,7 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -28,6 +27,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 import { UpdateCouponComponent } from './components/update-coupon/update-coupon.component';
+import { CouponByEndDateComponent } from './components/coupon-by-end-date/coupon-by-end-date.component';
 
 
 @NgModule({
@@ -47,36 +47,9 @@ import { UpdateCouponComponent } from './components/update-coupon/update-coupon.
     CompanyComponent,
     CustomerComponent,
     UpdateCustomerComponent,
-    UpdateCouponComponent],
+    UpdateCouponComponent,
+    CouponByEndDateComponent],
   imports: [BrowserModule,AppRoutingModule,FormsModule,HttpClientModule],
-=======
-import { AppRoutingModule } from "./app-routing.module";
-import { LayoutComponent } from "./components/layout/layout.component";
-import { AdminComponent } from "./components/admin/admin.component";
-import { CompanyComponent } from "./components/company/company.component";
-import { CustomerComponent } from "./components/customer/customer.component";
-import { LoginComponent } from "./components/login/login.component";
-import { FormsModule } from "@angular/forms";
-import { HomeComponent } from "./components/home/home.component";
-import { HttpClientModule } from "@angular/common/http";
-import { CompanysComponent } from "./components/companys/companys.component";
-import { CouponsComponent } from "./components/coupons/coupons.component";
-import { CustomersComponent } from "./components/customers/customers.component";
-
-@NgModule({
-  declarations: [
-    LayoutComponent,
-    AdminComponent,
-    CompanyComponent,
-    CustomerComponent,
-    LoginComponent,
-    HomeComponent,
-    CompanysComponent,
-    CouponsComponent,
-    CustomersComponent
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
->>>>>>> f58ff6de4f7b2766212642dfc25bcefae1d4cc4f
   providers: [],
   bootstrap: [LayoutComponent]
 })
