@@ -13,7 +13,7 @@ export class AdminGuardService implements CanActivate {
   state: RouterStateSnapshot;
 
   public canActivate(r: ActivatedRouteSnapshot, s: RouterStateSnapshot): boolean {
-    if (this.loginService.getAdminUser() === true) {
+    if (this.loginService.isAdmin()) {
       return true;
     } else {
       this.router.navigate(["/login"]);

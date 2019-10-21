@@ -13,7 +13,7 @@ export class CompanyGuardService implements CanActivate {
   state: RouterStateSnapshot;
 
   public canActivate(r: ActivatedRouteSnapshot, s: RouterStateSnapshot): boolean {
-    if (this.loginService.getCompanyUser() === true) {
+    if (this.loginService.getCompanyUser()) {
       return true;
     } else {
       this.router.navigate(["/login"]);

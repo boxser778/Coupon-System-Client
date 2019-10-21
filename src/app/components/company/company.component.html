@@ -1,6 +1,18 @@
 <h1>wellcome to company!!!!!</h1>
 <nav>
-  <a routerLink="/companys">Companys</a> | <a routerLink="/coupons">Coupons</a> | <a routerLink="/customers">Cusotmers</a> |
-  <a routerLink="/home" type="submit" (click)="logout()">Logout</a> | <a routerLink="/newCoupon">Add Coupon</a> |
-  <a routerLink="/coupons/endDate/:date">CouponByEndDate</a>
+  <a routerLink="/newCoupon">Add Coupon</a> | <a routerLink="/coupons/endDate/:date">CouponByEndDate</a> |
+  <a routerLink="/coupons/price/:price">CouponByPrice</a> |
+  <a routerLink="/coupons/type/:type">CouponByType</a> | <a routerLink="/companys/company/:id">GetCompanyById</a> | 
+  <a routerLink="/company/coupon/:id">UpdateCoupon</a>
+  <a routerLink="/home" type="submit" (click)="logout()">Logout</a>
 </nav>
+
+<!-- create-coupon
+update-coupon
+delete-coupon
+get-company-by-id
+get-all-company-coupons
+get-coupon-by-type
+get-coupon-by-price
+get-coupon-by-end-date
+view-income-by-company-id  -->

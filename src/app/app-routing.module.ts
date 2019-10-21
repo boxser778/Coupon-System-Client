@@ -1,59 +1,75 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './components/admin/admin.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { AdminComponent } from "./components/admin/admin.component";
 
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { AdminGuardService } from 'src/services/admin-guard.service';
-import { CompanysComponent } from './components/companys/companys.component';
-import { CouponsComponent } from './components/coupons/coupons.component';
-import { CustomersComponent } from './components/customers/customers.component';
-import { DeleteCompanyComponent } from './components/delete-company/delete-company.component';
-import { AddCompanyComponent } from './components/add-company/add-company.component';
-import { InspectCompanyComponent } from './components/inspect-company/inspect-company.component';
-import { AddCustomerComponent } from './components/add-customer/add-customer.component';
-import { AddCouponComponent } from './components/add-coupon/add-coupon.component';
-import { DeleteCustomerComponent } from './components/delete-customer/delete-customer.component';
-import { InspectCouponComponent } from './components/inspect-coupon/inspect-coupon.component';
-import { InspectCustomerComponent } from './components/inspect-customer/inspect-customer.component';
-import { DeleteCouponComponent } from './components/delete-coupon/delete-coupon.component';
-import { UpdateCompanyComponent } from './components/update-company/update-company.component';
-import { CompanyComponent } from './components/company/company.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { CustomerGuardService } from 'src/services/cusotmer-guard.service';
-import { CompanyGuardService } from 'src/services/company-guard.service';
-import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
-import { UpdateCouponComponent } from './components/update-coupon/update-coupon.component';
-import { CouponByEndDateComponent } from './components/coupon-by-end-date/coupon-by-end-date.component';
+import { LoginComponent } from "./components/login/login.component";
+import { HomeComponent } from "./components/home/home.component";
+import { AdminGuardService } from "src/services/admin-guard.service";
+import { CompanysComponent } from "./components/admin/companys/companys.component";
+import { CouponsComponent } from "./components/admin/coupons/coupons.component";
+import { CustomersComponent } from "./components/admin/customers/customers.component";
+import { DeleteCompanyComponent } from "./components/admin/delete-company/delete-company.component";
+import { AddCompanyComponent } from "./components/admin/add-company/add-company.component";
+import { InspectCompanyComponent } from "./components/admin/inspect-company/inspect-company.component";
+import { AddCustomerComponent } from "./components/admin/add-customer/add-customer.component";
+import { AddCouponComponent } from "./components/admin/add-coupon/add-coupon.component";
+import { DeleteCustomerComponent } from "./components/admin/delete-customer/delete-customer.component";
+import { InspectCouponComponent } from "./components/admin/inspect-coupon/inspect-coupon.component";
+import { InspectCustomerComponent } from "./components/admin/inspect-customer/inspect-customer.component";
+import { DeleteCouponComponent } from "./components/admin/delete-coupon/delete-coupon.component";
+import { UpdateCompanyComponent } from "./components/admin/update-company/update-company.component";
+import { CompanyComponent } from "./components/company/company.component";
+import { CustomerComponent } from "./components/customer/customer.component";
+import { CustomerGuardService } from "src/services/cusotmer-guard.service";
+import { CompanyGuardService } from "src/services/company-guard.service";
+import { UpdateCustomerComponent } from "./components/admin/update-customer/update-customer.component";
+import { UpdateCouponComponent } from "./components/admin/update-coupon/update-coupon.component";
+import { CouponByEndDateComponent } from "./components/company/coupon-by-end-date/coupon-by-end-date.component";
+import { CouponByPriceComponent } from './components/company/coupon-by-price/coupon-by-price.component';
+import { CouponByTypeComponent } from './components/company/coupon-by-type/coupon-by-type.component';
+import { GetCompanyByIdComponent } from './components/company/get-company-by-id/get-company-by-id.component';
 
 
 const routes: Routes = [
-{ path: "home", component:HomeComponent },
-{ path: "admin",  canActivate: [AdminGuardService], component: AdminComponent },
-{ path: "company", canActivate: [CompanyGuardService], component:CompanyComponent },
-{ path: "customer", canActivate: [CustomerGuardService], component:CustomerComponent },
-{ path: "login", component:LoginComponent },
-{ path: "", redirectTo: "/home" , pathMatch: "full" },
-{ path: "companys" , component:CompanysComponent },
-{ path: "coupons" , component:CouponsComponent},
-{ path: "customers", component:CustomersComponent},
-{ path: "companys/delete/:id", component: DeleteCompanyComponent},
-{ path: "newCompany",component:AddCompanyComponent},
-{ path: "companys/:id", component:InspectCompanyComponent},
-{ path: "newCustomer", component:AddCustomerComponent},
-{ path: "newCoupon", component:AddCouponComponent},
-{ path: "customers/delete/:id", component:DeleteCustomerComponent},
-{ path: "coupons/:id", component:InspectCouponComponent},
-{ path: "customers/:id", component:InspectCustomerComponent},
-{ path: "coupons/delete/:id", component:DeleteCouponComponent},
-{ path: "companys/update/:id" , component:UpdateCompanyComponent},
-{ path: "customers/update/:id" , component:UpdateCustomerComponent},
-{ path: "coupons/update/:id" , component:UpdateCouponComponent}, 
-{ path: "coupons/endDate/:date" , component:CouponByEndDateComponent}
+  { path: "home", component: HomeComponent },
+  {
+    path: "admin",
+    canActivate: [AdminGuardService],
+    component: AdminComponent,
+    children: [
+      { path: "companys", component: CompanysComponent },
+      { path: "coupons", component: CouponsComponent },
+      { path: "customers", component: CustomersComponent },
+    ]
+  },
+  { path: "company", canActivate: [CompanyGuardService], component: CompanyComponent },
+  { path: "customer", canActivate: [CustomerGuardService], component: CustomerComponent },
+  { path: "login", component: LoginComponent },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  // { path: "companys", component: CompanysComponent },
+  // { path: "coupons", component: CouponsComponent },
+  // { path: "customers", component: CustomersComponent },
+  { path: "companys/delete/:id", component: DeleteCompanyComponent },
+  { path: "newCompany", component: AddCompanyComponent },
+  { path: "companys/:id", component: InspectCompanyComponent },
+  { path: "newCustomer", component: AddCustomerComponent },
+  { path: "newCoupon", component: AddCouponComponent },
+  { path: "customers/delete/:id", component: DeleteCustomerComponent },
+  { path: "coupons/:id", component: InspectCouponComponent },
+  { path: "customers/:id", component: InspectCustomerComponent },
+  { path: "coupons/delete/:id", component: DeleteCouponComponent },
+  { path: "companys/update/:id", component: UpdateCompanyComponent },
+  { path: "customers/update/:id", component: UpdateCustomerComponent },
+  { path: "coupons/update/:id", component: UpdateCouponComponent },
+  { path: "coupons/endDate/:date", component: CouponByEndDateComponent },
+  { path: "coupons/price/:price" , component: CouponByPriceComponent},
+  { path: "coupons/type/:type" , component:CouponByTypeComponent},
+  { path: "companys/company/:id" , component:GetCompanyByIdComponent},
+  { path: "company/coupon/:id" , component:UpdateCouponComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

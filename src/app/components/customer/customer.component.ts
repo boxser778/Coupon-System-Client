@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Customer } from "src/models/customer";
 import { CustomersService } from "src/services/customer.service";
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 @Component({
   selector: "app-customer",
@@ -9,10 +10,11 @@ import { CustomersService } from "src/services/customer.service";
 })
 export class CustomerComponent implements OnInit {
   public customers: Customer[];
-  loginservice: any;
-  router: any;
 
-  public constructor(private customersService: CustomersService) {}
+  public constructor(private loginService: LoginServiceService) {}
 
   public ngOnInit(): void {}
+  public logout(): void {
+    this.loginService.logout();}
+    
 }

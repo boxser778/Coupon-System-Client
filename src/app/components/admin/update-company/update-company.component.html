@@ -1,0 +1,19 @@
+<h1>update-company works!</h1>
+
+<form *ngIf = "company">
+
+  <!-- <input type="text" comp_Name = "comp_Name" [(ngModel)] = "company.comp_Name" [ngModelOptions]="{standalone: true}" placeholder = "companyName..."> -->
+  <br>
+  <input type="text" email = "email" [(ngModel)] = "company.email" [ngModelOptions]="{standalone: true}" placeholder = "companyEmail...">
+  <br>
+  <input type="text" password = "password" [(ngModel)] = "company.password" [ngModelOptions]="{standalone: true}" placeholder = "companyPassword...">
+<br>
+<br>
+  <button (click) = "updateCompany()">Update Company</button>
+
+</form>
+<br>
+<br>
+<!-- <a routerLink = "admin/companys">Back to List</a> -->
+
+<button (click) = "goBack()" >No! Back to List</button>

@@ -1,0 +1,30 @@
+<h2>here are our customers:</h2>
+
+
+<table>
+
+<tr>
+<th>Customer Name</th>
+<th>Customer Password</th>
+<th>update</th>
+<th>delete</th>
+</tr>
+
+<tr *ngFor="let c of customers">
+<td>
+    <a routerLink = "/customers/{{c.id}}">{{c.customerName}}</a>
+</td>
+<td>{{c.customerPassword}}</td>
+
+<td>
+<a routerLink = "/customers/update/{{c.id}}">update</a>
+</td>
+<td>
+<a routerLink = "/customers/delete/{{ c.id }}">delete</a>
+</td>
+</tr>
+</table>
+
+<br>
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<a class="material-icons" routerLink="/admin">arrow_back</a> -->

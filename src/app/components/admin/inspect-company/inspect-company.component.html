@@ -1,0 +1,12 @@
+<h2>Company Information</h2>
+
+<div *ngIf = "company">
+<h3>Company ID: {{company.id}}</h3>
+<h3>Company Name: {{company.comp_Name}}</h3>
+<h3>Company Email: {{company.email}}</h3>
+<h3>Company Password: {{company.password}}</h3>
+</div>
+<br>
+<!-- <a routerLink = "admin/companys">Back to List</a> -->
+
+<button (click) = "goBack()" >No! Back to List</button>

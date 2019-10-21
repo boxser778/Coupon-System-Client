@@ -1,0 +1,36 @@
+<h2>here are our companys:</h2>
+
+<table>
+
+<tr> 
+<th>Company Name</th>
+<th>Email</th>
+<th>Password</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+
+<tr *ngFor="let c of companys">
+    <td>
+        <a routerLink = "/companys/{{c.id}}">{{c.comp_Name}}</a>
+    </td> 
+    <td>{{c.email}}</td> 
+    <td>{{c.password}}</td>
+<td>
+<a routerLink = "/companys/update/{{ c.id }}">update</a>
+</td>
+<td>
+<a routerLink = "/companys/delete/{{ c.id }}">delete</a>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<a class="material-icons" routerLink="/admin">arrow_back</a> -->
+
+
+
+
+   

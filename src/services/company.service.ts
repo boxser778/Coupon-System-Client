@@ -28,7 +28,32 @@ export class CompanysService {
   //     return this.httpClient.delete<undefined>("http://localhost:8080/admin/company" + id);
   // }
 
-  public getCouponByEndDate(): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/coupon");
+  public getCouponByEndDate(endDate): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(`http://localhost:8080/company/couponByDate/${endDate}`);
   }
+
+  public getOneCoupon(id: number): Observable<Coupon> {
+    return this.httpClient.get<Coupon>("http://localhost:8080/company/coupon/" + id);
+  }
+
+  public getAllCoupons(): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/admin/coupon");
+  }
+
+  public getCouponByPrice(price): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/couponByPrice/" + price);
+  }
+
+  public getCouponByType(type): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/couponByType/" + type);
+  }
+
+  public getCompanyById(id: number): Observable<Company> {
+    return this.httpClient.get<Company>("http://localhost:8080/company/company/" + id);
+  }
+
+  public updateCoupon(coupon: Coupon): Observable<Coupon> {
+    return this.httpClient.put<Coupon>("http://localhost:8080/company/coupon/" + coupon.id, coupon);
+  }
+
 }

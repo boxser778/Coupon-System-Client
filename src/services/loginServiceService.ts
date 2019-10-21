@@ -17,6 +17,10 @@ export class LoginServiceService {
   private userCustomer = JSON.parse(localStorage.getItem("userCustomer") || "false");
   private userName: string = JSON.parse(localStorage.getItem("username"));
 
+  // private tryToGetPrevState() {
+  //   const token = localStorage.getItem("token");
+  // }
+
   login(userName, password, cliantType): Observable<any> {
     let url = this.urlsService.getLoginUrl() + "?name=" + userName + "&password=" + password + "&clientType=" + cliantType;
     console.log(url);
@@ -40,7 +44,7 @@ export class LoginServiceService {
   }
 
   // GET & SET & SETfalse admin user
-  getAdminUser() {
+  isAdmin() {
     return this.userAdmin;
   }
   setAdminUser() {

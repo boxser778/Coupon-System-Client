@@ -1,0 +1,25 @@
+<label>Company Id : </label>
+
+<input type="number" id="id" [(ngModel)]="chosenCompanyId" [ngModelOptions]="{ standalone: true }" placeholder="Company id.." />
+
+<button (click)="onSearch()">Search</button>
+
+<br /><br />
+
+<table>
+  <div>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+
+    <tr *ngIf="company">
+      <td>{{ company.id }}</td>
+      <td>{{ company.comp_Name }}</td>
+      <td>{{ company.email }}</td>
+      <td>{{ company.password }}</td>
+    </tr>
+  </div>
+</table>

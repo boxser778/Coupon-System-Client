@@ -13,7 +13,7 @@ export class CustomerGuardService implements CanActivate {
   state: RouterStateSnapshot;
 
   public canActivate(r: ActivatedRouteSnapshot, s: RouterStateSnapshot): boolean {
-    if (this.loginService.getCustomerUser() === true) {
+    if (this.loginService.getCustomerUser()) {
       return true;
     } else {
       this.router.navigate(["/login"]);
