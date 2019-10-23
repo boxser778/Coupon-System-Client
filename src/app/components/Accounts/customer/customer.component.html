@@ -1,0 +1,23 @@
+<h1>wellcome to customer!!!!!</h1>
+<nav>
+  <nav class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">
+        <h3>Get Coupon</h3>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+          <a routerLink="./coupons"><h3>Coupons</h3></a>
+        <a routerLink="./couponbyprice"><h3>CouponByPrice</h3></a>
+        <a routerLink="./couponbytype"><h3>CouponByType</h3></a>
+      </div>
+    </div>
+    <a routerLink="/home" type="submit" (click)="logout()"><h3>Logout</h3></a>
+  </nav>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- purchase-coupon
+get-all-customer-coupons
+get-coupons-by-type ---  need to fix type enum problems -->

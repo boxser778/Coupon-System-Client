@@ -1,0 +1,29 @@
+<h2>Create New Customer</h2>
+
+<form>
+  <label><h3>Customer Name:</h3></label>
+  <input
+    type="text"
+    customerName="name"
+    [(ngModel)]="customer.customerName"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Alex..."
+  />
+  <br />
+  <label><h3>Customer Password:</h3></label>
+  <input
+    type="text"
+    customerPassword="password"
+    [(ngModel)]="customer.customerPassword"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="1123..."
+  />
+  <br />
+  <br />
+  <button (click)="addCustomer()">Create Customer</button>
+</form>
+
+<br />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<a class="material-icons" routerLink="/admin">arrow_back</a>

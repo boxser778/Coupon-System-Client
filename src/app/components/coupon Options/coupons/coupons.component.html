@@ -1,0 +1,43 @@
+<br><br>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Picture</th>
+    <th>Amount</th>
+    <th>Price</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Type</th>
+    <th>Messege</th>
+    <!-- <th>Update</th>
+    <th>Delete</th> -->
+  </tr>
+
+  <tr *ngFor="let c of coupons">
+    <td>{{ c.id }}</td>
+    <td>
+      <!-- <a routerLink="/coupons/{{ c.id }}">{{ c.title }}</a> -->
+      {{ c.title }}
+    </td>
+
+    <td><img [src]="c.picture" alt="picture" /></td>
+    <td>{{ c.amount }}</td>
+    <td>{{ c.price }}</td>
+    <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
+    <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
+    <td>{{ c.type }}</td>
+    <td>{{ c.msg }}</td>
+
+    <!-- <td>
+      <a routerLink="/coupons/update/{{ c.id }}">update</a>
+    </td>
+    <td>
+      <a routerLink="/coupons/delete/{{ c.id }}">delete</a>
+    </td> -->
+  </tr>
+</table>
+
+<br />
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<a class="material-icons" routerLink="/admin">arrow_back</a> -->

@@ -8,9 +8,10 @@ import { UrlsServiceService } from "./UrlsServiceService";
 @Injectable({
   providedIn: "root"
 })
+
 export class LoginServiceService {
   constructor(private httpClient: HttpClient, private urlsService: UrlsServiceService) {}
-
+  
   public token: string = localStorage.getItem("token");
   private userAdmin = JSON.parse(localStorage.getItem("userAdmin") || "false");
   private userCompany = JSON.parse(localStorage.getItem("userCompany") || "false");
@@ -32,7 +33,7 @@ export class LoginServiceService {
     this.setAdminUserF();
     this.setCompanyUserF();
     this.setCustomerUserF();
-    alert("good bye!");
+    alert("You are logout");
   }
 
   // GET&SET token
@@ -57,9 +58,10 @@ export class LoginServiceService {
   }
 
   // GET & SET & SETfalse company user
-  getCompanyUser() {
+  isCompany() {
     return this.userCompany;
   }
+
   setCompanyUser() {
     localStorage.setItem("userCompany", "true");
     this.userCompany = true;
@@ -70,9 +72,11 @@ export class LoginServiceService {
   }
 
   // GET & SET & SETfalse customer user
-  getCustomerUser() {
+
+  isCustomer() {
     return this.userCustomer;
   }
+
   setCustomerUser() {
     localStorage.setItem("userCustomer", "true");
     this.userCustomer = true;

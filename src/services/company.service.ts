@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Company } from "src/models/company";
 import { Coupon } from "src/models/coupon";
+import { couponType } from 'src/models/couponType';
 
 @Injectable({
   providedIn: "root"
@@ -37,7 +38,7 @@ export class CompanysService {
   }
 
   public getAllCoupons(): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>("http://localhost:8080/admin/coupon");
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/coupon");
   }
 
   public getCouponByPrice(price): Observable<Coupon[]> {
@@ -54,6 +55,14 @@ export class CompanysService {
 
   public updateCoupon(coupon: Coupon): Observable<Coupon> {
     return this.httpClient.put<Coupon>("http://localhost:8080/company/coupon/" + coupon.id, coupon);
+  }
+
+  public getCouponById(id:number): Observable<Coupon> {
+    return this.httpClient.get<Coupon>("http://localhost:8080/company/coupon/" + id);
+  }
+
+  public updateCompany(company: Company): Observable<Company> {
+    return this.httpClient.put<Company>("http://localhost:8080/company/company/" + company.id, company);
   }
 
 }

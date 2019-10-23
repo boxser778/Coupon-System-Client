@@ -1,0 +1,29 @@
+<h1>wellcome to company!!!!!</h1>
+
+<nav class="navbar">
+  <a routerLink="./coupons"><h3>Coupons</h3></a>
+  <a routerLink="./createCoupon"><h3>Add Coupon</h3></a>
+  <div class="dropdown">
+    <button class="dropbtn">
+      <h3>Get Coupon</h3>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a routerLink="./couponbyid"><h3>CouponById + Update Coupon</h3></a>
+      <a routerLink="./couponbydate"><h3>CouponByEndDate</h3></a>
+      <a routerLink="./couponbyprice"><h3>CouponByPrice</h3></a>
+      <a routerLink="./couponbytype"><h3>CouponByType</h3></a>
+    </div>
+  </div>
+
+  <a routerLink="./companybyid"><h3>GetCompanyById</h3></a>
+  <a routerLink="/home" type="submit" (click)="logout()"><h3>Logout</h3></a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- 
+delete-coupon --- need to delete all the customers that own this coupon
+get-all-company-coupons --- get the coupons that created by spacific company (get company by id)
+get-coupon-by-type --- needed fix
+view-income-by-company-id  -->

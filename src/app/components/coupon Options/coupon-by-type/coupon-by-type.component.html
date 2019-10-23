@@ -1,0 +1,41 @@
+<!-- <h1>Get Coupon By Type</h1> -->
+
+
+<label><h3>Please Choose The Wanted Coupon Type: </h3></label>
+<select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
+  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
+</select>
+<br><br>
+<button (click)="onSearch()">Search</button>
+
+<br /><br />
+
+<table>
+  <div>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Picture</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Type</th>
+      <th>Messege</th>
+    </tr>
+
+    <tr *ngFor="let c of coupons">
+      <td>{{ c.id }}</td>
+      <td>{{ c.title }}</td>
+      <td><img [src]="c.picture" alt="picture" /></td>
+      <td>{{ c.amount }}</td>
+      <td>{{ c.price }}</td>
+      <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
+      <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
+      <td>{{ c.type }}</td>
+      <td>{{ c.msg }}</td>
+    </tr>
+  </div>
+</table>
+
+

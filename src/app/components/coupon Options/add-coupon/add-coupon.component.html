@@ -1,0 +1,42 @@
+<h2>Fill Up All The Empty Boxes!!!!</h2>
+
+<form>
+  <label><h3>Choose Coupon Amount:</h3> </label>
+  <input type="text" Amount="amount" [(ngModel)]="coupon.amount" [ngModelOptions]="{ standalone: true }" placeholder="Amount of coupons in stock"/>
+  <br />
+  <label><h3>Give Some Coupon Details:</h3></label>
+  <input type="text" Messege="msg" [(ngModel)]="coupon.msg" [ngModelOptions]="{ standalone: true }" placeholder="some info on coupon" />
+  <br />
+  <label><h3>Put A Url Link To Show Your Coupon Picture:</h3></label>
+  <input type="text" Picture="picture" [(ngModel)]="coupon.picture" [ngModelOptions]="{ standalone: true }" placeholder="Link for Image" />
+  <br />
+  <label><h3>Set A Buying Price For Your Coupon:</h3> </label>
+  <input type="text" Price="price" [(ngModel)]="coupon.price" [ngModelOptions]="{ standalone: true }" placeholder="For Single Coupon" />
+  <br />
+  <label><h3>Set An Starting Date For Your Coupon:</h3> </label>
+  <input type="date" StartDate="startDate" [(ngModel)]="startDate" [ngModelOptions]="{ standalone: true }" placeholder="ex:00-00-0000" />
+  <br />
+  <label><h3>Set An End Date For Your Coupon:</h3> </label>
+  <input type="date" EndDate="endDate" [(ngModel)]="endDate" [ngModelOptions]="{ standalone: true }" placeholder="ex:00-00-0000" />
+  <br />
+  <label><h3>Give Your Coupon A Title:</h3> </label>
+  <input type="text" Title="title" [(ngModel)]="coupon.title" [ngModelOptions]="{ standalone: true }" placeholder="ex:50% off Tshirts" />
+  <br />
+  <td>
+    <!-- <select [(ngModel)]="couponType.type"> -->
+    <!-- <select *ngFor="let type of couponType"> -->
+
+    <label><h3>Choose Which Kind Of Coupon Type The Coupon:</h3></label>
+    <select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
+      <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
+    </select>
+    <br />
+    <br />
+    <button (click)="addCoupon()">Add Company</button>
+  </td>
+</form>
+
+<!-- <br /> -->
+
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<a class="material-icons" routerLink="*">arrow_back</a> -->

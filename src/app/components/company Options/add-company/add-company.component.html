@@ -1,0 +1,26 @@
+<h2>Create New Company</h2>
+
+<form>
+  <label><h3>Company Name:</h3></label>
+  <input
+    type="text"
+    comp_Name="comp_Name"
+    [(ngModel)]="company.comp_Name"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Coca Cola..."
+  />
+  <br />
+  <label><h3>Company Email:</h3></label>
+  <input type="text" Email="Email" [(ngModel)]="company.email" [ngModelOptions]="{ standalone: true }" placeholder="Cola@walla.com..." />
+  <br />
+  <label><h3>Company Password:</h3></label>
+  <input type="text" Password="Password" [(ngModel)]="company.password" [ngModelOptions]="{ standalone: true }" placeholder="1123..." />
+  <br />
+  <br />
+  <button (click)="addCompany()">Add Company</button>
+</form>
+
+<br />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<a class="material-icons" routerLink="/admin">arrow_back</a>

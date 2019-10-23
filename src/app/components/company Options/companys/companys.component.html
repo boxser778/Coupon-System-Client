@@ -1,0 +1,32 @@
+<br><br>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <!-- <th>Update</th>
+<th>Delete</th> -->
+  </tr>
+
+  <tr *ngFor="let c of companys">
+    <td>{{ c.id }}</td>
+    <td>
+      <!-- <a routerLink = "/companys/{{c.id}}">{{c.comp_Name}}</a> -->
+      {{ c.comp_Name }}
+    </td>
+    <td>{{ c.email }}</td>
+    <td>{{ c.password }}</td>
+    <!-- <td> -->
+    <!-- <a routerLink = "/companys/update/{{ c.id }}">update</a> -->
+    <!-- </td> -->
+    <!-- <td> -->
+    <!-- <a routerLink = "/companys/delete/{{ c.id }}">delete</a> -->
+    <!-- </td> -->
+  </tr>
+</table>
+
+<br />
+
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<a class="material-icons" routerLink="/admin">arrow_back</a> -->

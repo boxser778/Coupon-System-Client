@@ -6,20 +6,26 @@
 <a href="javascript:void" (click)="logout()" routerLink = "#" *ngIf="loginService.isLoggedIn">Logout</a>
 <a routerLink = "/companys">companys</a>
 </nav> -->
-<marquee>
-   zzzzzz
- </marquee>
-
- <nav>
-<a routerLink = "/admin">Admin</a> |
-<a routerLink = "/company">Company</a> |
-<a routerLink = "/customer">Customer</a> |
-<!-- <button routerLink = "/home" type="submit" (click)="logout()">Logout</button> -->
-</nav>
 
 <h1>Coupon System</h1>
 
+<marquee>
+  zzzzzz
+</marquee>
+
+<!-- <nav>
+  <a routerLink = "/admin">Admin</a> |
+  <a routerLink = "/company">Company</a> |
+  <a routerLink = "/customer">Customer</a> 
+  </nav> -->
+
+  <!-- <nav class="navbar">
+      <a routerLink="/home"><h3>Home</h3></a>
+      <a routerLink="/about"><h3>about</h3></a>
+              <a routerLink="/login"><h3>Login</h3></a>
+              <a routerLink="/home" type="submit" (click)="logout()"><h3>Logout</h3></a>
+  </nav> -->
+        
+        
+
 <router-outlet></router-outlet>
-
-
-  

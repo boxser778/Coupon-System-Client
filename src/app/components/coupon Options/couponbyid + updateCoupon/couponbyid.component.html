@@ -1,0 +1,40 @@
+<!-- <h1>Get Coupon By Id</h1> -->
+
+<label><h3>Please Insert Coupon Id Here:</h3></label>
+<input type="number" id="id" [(ngModel)]="chosenId" [ngModelOptions]="{ standalone: true }" placeholder="coupon id.." />
+<br /><br />
+<button (click)="onSearch()">Search</button>
+
+<br /><br />
+
+<div *ngIf="coupon">
+  <h3>Coupon ID: {{ coupon.id }}</h3>
+  <h3>Coupon Title: {{ coupon.title }}</h3>
+  <h3>Coupon Picture: {{ coupon.picture }}</h3>
+  <h3>Coupon Amount: {{ coupon.amount }}</h3>
+  <h3>Coupon Price: {{ coupon.price }}</h3>
+  <h3>Coupon Start Date: {{ coupon.startDate | date: "dd/MM/yyyy" }}</h3>
+  <h3>Coupon End Date: {{ coupon.endDate | date: "dd/MM/yyyy" }}</h3>
+  <h3>Coupon Picture: {{ coupon.type }}</h3>
+  <h3>Coupon Price: {{ coupon.msg }}</h3>
+</div>
+
+<br /><br />
+
+<form *ngIf="coupon">
+  <h3>Choose New End Date To Your Coupon:</h3>
+  <input
+    type="date"
+    EndDate="endDate"
+    [(ngModel)]="coupon.endDate"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="endDate(ex:2006-02-01)..."
+  />
+  <br />
+  <h3>Choose New Price To Your Coupon:</h3>
+  <input type="text" Price="price" [(ngModel)]="coupon.price" [ngModelOptions]="{ standalone: true }" placeholder="price..." />
+
+  <br />
+  <br />
+  <button (click)="updateCoupon()">Update Coupon</button>
+</form>

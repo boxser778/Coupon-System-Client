@@ -1,0 +1,24 @@
+<label><h3>Please Insert Customer Id Here:</h3></label>
+<input type="number" id="id" [(ngModel)]="chosenCustomerId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
+
+<button (click)="onSearch()">Search</button>
+
+<br /><br />
+
+
+   
+<div *ngIf="customer">
+      <h3>Customer ID: {{ customer.id }}</h3>
+      <h3>Customer Name: {{ customer.customerName }}</h3>
+      <h3>Customer Name: {{ customer.customerPassword }}</h3>
+  </div>
+
+<br /><br />
+
+<form *ngIf="customer">
+  <h3>Choose New Customer Password To Your Customer:</h3>
+  <input type="text" Password="password" [(ngModel)]="customer.customerPassword" [ngModelOptions]="{ standalone: true }" placeholder="1123..." />
+  <br />
+  <br />
+  <button (click)="updateCustomer()">Update Customer</button>
+</form>
