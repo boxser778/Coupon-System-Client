@@ -3,6 +3,7 @@ import { CompanysService } from 'src/services/company.service';
 import { Router } from '@angular/router';
 import { Coupon } from 'src/models/coupon';
 import { EnumToArrayPipe } from 'src/app/shared/enum-to-array.pipe';
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 @Component({
   selector: 'app-couponbyid',
@@ -13,7 +14,7 @@ import { EnumToArrayPipe } from 'src/app/shared/enum-to-array.pipe';
 })
 export class CouponbyidComponent {
 
-  constructor(private companyService: CompanysService, private router: Router) {}
+  constructor(private companyService: CompanysService, private router: Router,private loginService: LoginServiceService) {}
 
   public chosenId: number;
   // public coupons: Coupon[];
@@ -31,15 +32,17 @@ export class CouponbyidComponent {
       };
   }
 
+  
   public updateCoupon(): void {
-    this.companyService.updateCoupon(this.coupon).subscribe(
-      coupon => {
-        alert("Coupon has been updated!");
-
-        this.router.navigate(["company/coupons"]);
-      },
-      err => alert(err.message)
-    );
-  }
-
+      this.companyService.updateCoupon(this.coupon).subscribe(
+        coupon => {
+          alert("Coupon has been updated!");
+  
+          this.router.navigate(["company/coupons"]);
+        },
+        err => alert(err.message)
+      );
+    
+    }
+    
 }

@@ -39,7 +39,7 @@ import { Customer } from 'src/models/customer';
         customer => {
           alert("Customer has been updated!");
   
-          this.router.navigate(["admin/customerbyid"]);
+          this.router.navigate(["admin/customers"]);
         },
         err => alert(err.message)
       );

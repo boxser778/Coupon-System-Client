@@ -13,16 +13,17 @@ import { couponType } from 'src/models/couponType';
 })
 export class CouponByTypeComponent {
   
-  public coupon = new Coupon();
+ public coupon = new Coupon();
+  constructor(private companyService: CompanysService, private router: Router) {}
+
+  
   public couponType = couponType;
   public chosenType: couponType;
   public coupons: Coupon[];
   activatedRoute: any;
 
-  constructor(private companyService: CompanysService, private router: Router) {}
-
   public onSearch() {
-    this.companyService.getCouponByType(this.chosenType).subscribe(coupons => {
+    this.companyService.getCouponByType(this.coupon.type).subscribe(coupons => {
       this.coupons = coupons;
       console.log(this.coupons);
     }),

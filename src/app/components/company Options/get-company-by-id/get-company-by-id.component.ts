@@ -51,7 +51,7 @@ export class GetCompanyByIdComponent {
         company => {
           alert("Company has been updated!");
   
-          this.router.navigate(["admin/companybyid"]);
+          this.router.navigate(["admin/companys"]);
         },
         err => alert(err.message)
       );
@@ -60,7 +60,7 @@ export class GetCompanyByIdComponent {
         company => {
           alert("Company has been updated!");
   
-          this.router.navigate(["company/companybyid"]);
+          this.router.navigate(["company/getCompanyById"]);
         },
         err => alert(err.message)
       );
