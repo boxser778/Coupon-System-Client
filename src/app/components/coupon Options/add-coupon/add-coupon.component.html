@@ -1,6 +1,9 @@
 <h2>Fill Up All The Empty Boxes!!!!</h2>
 
 <form>
+  <label><h3>Please Insert Company Id Here:</h3></label>
+  <input type="number" id="id" [(ngModel)]="chosenCompanyId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
+  <br />
   <label><h3>Choose Coupon Amount:</h3> </label>
   <input type="text" Amount="amount" [(ngModel)]="coupon.amount" [ngModelOptions]="{ standalone: true }" placeholder="Amount of coupons in stock"/>
   <br />

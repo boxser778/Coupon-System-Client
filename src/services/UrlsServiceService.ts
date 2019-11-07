@@ -6,10 +6,10 @@ import { Injectable } from "@angular/core";
 export class UrlsServiceService {
   constructor() {}
 
-  private adminMenuUrl = "http://localhost:8080/admin/";
-  private companyMenuUrl = "http://localhost:8080/company/";
-  private customerMenuUrl = "http://localhost:8080/customer/";
-  private loginUrl = "http://localhost:8080/Login/login/";
+  private adminMenuUrl = "http://localhost:8080/coupon-system/admin/";
+  private companyMenuUrl = "http://localhost:8080/coupon-system/company/";
+  private customerMenuUrl = "http://localhost:8080/coupon-system/customer/";
+  private loginUrl = "http://localhost:8080/coupon-system/Login/login/";
 
   public getAdminUrl() {
     return this.adminMenuUrl;

@@ -1,4 +1,7 @@
-<h2>Are you sure you want to delete this company?</h2>
+<label><h3>Please Insert Company Id Here:</h3></label>
+<input type="number" id="id" [(ngModel)]="chosenCompanyId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
+
+<button (click)="onSearch()">Search</button>
 
 <div *ngIf="company">
   <h3>Id: {{ company.id }}</h3>

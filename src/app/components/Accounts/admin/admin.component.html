@@ -15,16 +15,7 @@
 </nav> -->
 
 <nav class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn">
-      <h3>Coupon Options</h3>
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a routerLink="./coupons"><h3>Show All Coupons</h3></a>
-      <!-- <a routerLink="./inspectCoupon">InspectCoupon</a> -->
-    </div>
-  </div>
+
 
   <div class="dropdown">
     <button class="dropbtn">
@@ -35,7 +26,7 @@
       <a routerLink="./companys"><h3>Show All Companys</h3></a>
       <a routerLink="./newCompany"><h3>Create New Company</h3></a>
       <a routerLink="./companybyid"><h3>Inspact Company + Update Company</h3></a>
-      <!-- <a routerLink="./deleteCompany">DeleteCompany</a> | -->
+      <a routerLink="./deleteCompany"><h3>DeleteCompany</h3></a> 
     </div>
   </div>
 
@@ -48,7 +39,7 @@
       <a routerLink="./customers"><h3>Show All Customers</h3></a>
       <a routerLink="./newCustomer"><h3>Create New Customer</h3></a>
       <a routerLink="./customerbyid"><h3>Inspact Customer + Update Customer</h3></a>
-      <!-- <a routerLink="./deleteCustomer">DeleteCustomer</a> | -->
+      <a routerLink="./deleteCustomer"><h3>DeleteCustomer</h3></a> 
     </div>
   </div>
   <a routerLink="/home" type="submit" (click)="logout()"><h3>Logout</h3></a>

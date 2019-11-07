@@ -38,7 +38,6 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: "companys", component: CompanysComponent },
-      { path: "coupons", component: CouponsComponent },
       { path: "customers", component: CustomersComponent },
       { path: "newCompany", component: AddCompanyComponent },
       { path: "newCustomer", component: AddCustomerComponent },

@@ -8,24 +8,20 @@ import { ActivatedRoute, Router } from "@angular/router";
   templateUrl: "./delete-customer.component.html",
   styleUrls: ["./delete-customer.component.css"]
 })
-export class DeleteCustomerComponent implements OnInit {
+export class DeleteCustomerComponent {
   public customer: Customer;
-
+  public chosenCustomerId: number;
   constructor(private adminService: AdminService, private activeatedRoute: ActivatedRoute, private router: Router) {}
 
-  public ngOnInit(): void {
-    const id = +this.activeatedRoute.snapshot.params.id;
-
-    this.adminService.getOneCustomer(id).subscribe(
-      customer => {
-        this.customer = customer;
-        if (!customer) {
-          alert("Customer Id " + id + " Dosent Exist.");
-          this.router.navigate(["admin/customers"]);
-        }
-      },
-      err => alert(err.message)
-    );
+  public onSearch() {
+    this.adminService.getOneCustomer(this.chosenCustomerId).subscribe(customer => {
+      this.customer = customer;
+      console.log(this.customer);
+    }),
+      err => {
+        alert(err.message);
+        this.customer = undefined;
+      };
   }
 
   public deleteCustomer(): void {

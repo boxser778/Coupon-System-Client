@@ -1,4 +1,7 @@
-<h2>Are you sure you want to delete this customer?</h2>
+<label><h3>Please Insert Customer Id Here:</h3></label>
+<input type="number" id="id" [(ngModel)]="chosenCustomerId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
+
+<button (click)="onSearch()">Search</button>
 
 <div *ngIf="customer">
   <h3>Id: {{ customer.id }}</h3>

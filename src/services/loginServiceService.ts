@@ -13,9 +13,9 @@ export class LoginServiceService {
   constructor(private httpClient: HttpClient, private urlsService: UrlsServiceService) {}
   
   public token: string = localStorage.getItem("token");
-  private userAdmin = JSON.parse(localStorage.getItem("userAdmin") || "false");
-  private userCompany = JSON.parse(localStorage.getItem("userCompany") || "false");
-  private userCustomer = JSON.parse(localStorage.getItem("userCustomer") || "false");
+  private userAdmin: boolean = JSON.parse(localStorage.getItem("userAdmin") || "false");
+  private userCompany: boolean = JSON.parse(localStorage.getItem("userCompany") || "false");
+  private userCustomer: boolean = JSON.parse(localStorage.getItem("userCustomer") || "false");
   private userName: string = JSON.parse(localStorage.getItem("username"));
 
   // private tryToGetPrevState() {

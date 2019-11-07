@@ -16,19 +16,19 @@ export class InspectCouponComponent implements OnInit {
 
   ngOnInit(): void {
    
-    const id = +this.activatedRoute.snapshot.params.id;
+  //   const id = +this.activatedRoute.snapshot.params.id;
 
-    this.adminService
-    .getOneCoupon(id)
-    .subscribe(
-      coupon => {
-        this.coupon = coupon;
-        if(!coupon){
-          alert("Coupon Id " + id + " dosen't Exist.");
-          this.router.navigate(["/coupons"]);
-        }
-      },
-      err => alert(err.message));
+  //   this.adminService
+  //   .getOneCoupon(id)
+  //   .subscribe(
+  //     coupon => {
+  //       this.coupon = coupon;
+  //       if(!coupon){
+  //         alert("Coupon Id " + id + " dosen't Exist.");
+  //         this.router.navigate(["/coupons"]);
+  //       }
+  //     },
+  //     err => alert(err.message));
   }
 
   public goBack(): void {

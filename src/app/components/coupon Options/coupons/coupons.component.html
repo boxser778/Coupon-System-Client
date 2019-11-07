@@ -32,7 +32,7 @@
     <!-- <td>
       <a routerLink="/coupons/update/{{ c.id }}">update</a>
     </td>
-    <td>
+    <td *ngIf="isAdmin">
       <a routerLink="/coupons/delete/{{ c.id }}">delete</a>
     </td> -->
   </tr>

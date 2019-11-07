@@ -16,31 +16,31 @@ export class DeleteCouponComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    const id = +this.activeatedRoute.snapshot.params.id;
+    // const id = +this.activeatedRoute.snapshot.params.id;
 
-    this.adminService
-    .getOneCoupon(id)
-    .subscribe(
-      coupon => {
-      this.coupon = coupon;
-      if(!coupon) {
-        alert("Coupon Id " + id + " Dosent Exist.");
-        this.router.navigate(["admin/coupons"]);
-      }
-    },
-    err => alert(err.message));
+    // this.adminService
+    // .getOneCoupon(id)
+    // .subscribe(
+    //   coupon => {
+    //   this.coupon = coupon;
+    //   if(!coupon) {
+    //     alert("Coupon Id " + id + " Dosent Exist.");
+    //     this.router.navigate(["admin/coupons"]);
+    //   }
+    // },
+    // err => alert(err.message));
 
   }
 
   public deleteCoupon(): void {  
-    this.adminService
-    .deleteCoupon(this.coupon.id)
-    .subscribe(
-      () => {
-        alert("Coupon has been successfully deleted");
-        this.router.navigate(["admin/coupons"]);
-      },
-      err => alert(err.message));
+    // this.adminService
+    // .deleteCoupon(this.coupon.id)
+    // .subscribe(
+    //   () => {
+    //     alert("Coupon has been successfully deleted");
+    //     this.router.navigate(["admin/coupons"]);
+    //   },
+    //   err => alert(err.message));
     
     }
 
