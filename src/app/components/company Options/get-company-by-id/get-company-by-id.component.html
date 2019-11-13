@@ -12,7 +12,41 @@
       <h3>Company Name: {{ company.comp_Name }}</h3>
       <h3>Company Email: {{ company.email }}</h3>
       <h3>Company Password: {{ company.password }}</h3>
+     
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Picture</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Type</th>
+        <th>Messege</th>
+      </tr>
+    
+      <!-- <div *ngFor="let coupon of coupons; let i = index">  -->
+        <table>
+          <tr *ngFor="let company of coupons">
+           <td>{{company.coupons}}</td>
+          </tr>
+      </table>
+      <!-- <tr>
+        <td>{{ c.id }}</td>
+        <td>
+          {{ c.title }}
+        </td>
+        <td><img [src]="c.picture" alt="picture" /></td>
+        <td>{{ c.amount }}</td>
+        <td>{{ c.price }}</td>
+        <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
+        <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
+        <td>{{ c.type }}</td>
+        <td>{{ c.msg }}</td>
+      </tr>  -->
   </div>
+  
+ 
 
 <br /><br />
 

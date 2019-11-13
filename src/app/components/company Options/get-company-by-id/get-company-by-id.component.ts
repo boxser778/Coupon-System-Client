@@ -22,26 +22,28 @@ export class GetCompanyByIdComponent {
   public chosenCompanyId: number;
   activatedRoute: any;
   public company: Company;
+    public coupons:Coupon[];
 
   public onSearch() {
     if (this.loginService.isAdmin) {
       this.adminService.getOneCompany(this.chosenCompanyId).subscribe(company => {
-        this.company = company;
+        this.company = company , this.coupons;
+      
         console.log(this.company);
       }),
         err => {
           alert(err.message);
           this.company = undefined;
         };
-    } else if (this.loginService.isCompany) {
-      this.companyService.getCompanyById(this.chosenCompanyId).subscribe(company => {
-        this.company = company;
-        console.log(this.company);
-      }),
-        err => {
-          alert(err.message);
-          this.company = undefined;
-        };
+    // } else if (this.loginService.isCompany) {
+    //   this.companyService.getCompanyById(this.chosenCompanyId).subscribe(company => {
+    //     this.company = company;
+    //     console.log(this.company);
+    //   }),
+    //     err => {
+    //       alert(err.message);
+    //       this.company = undefined;
+    //     };
     }
   }
 
@@ -55,15 +57,15 @@ export class GetCompanyByIdComponent {
         },
         err => alert(err.message)
       );
-    }else if (this.loginService.isCompany) {
-      this.companyService.updateCompany(this.company).subscribe(
-        company => {
-          alert("Company has been updated!");
+    // }else if (this.loginService.isCompany) {
+    //   this.companyService.updateCompany(this.company).subscribe(
+    //     company => {
+    //       alert("Company has been updated!");
   
-          this.router.navigate(["company/getCompanyById"]);
-        },
-        err => alert(err.message)
-      );
+    //       this.router.navigate(["company/getCompanyById"]);
+    //     },
+    //     err => alert(err.message)
+    //   );
     }
       
   }

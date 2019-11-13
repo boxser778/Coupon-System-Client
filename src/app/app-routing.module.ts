@@ -29,6 +29,7 @@ import { CustomerComponent } from "./components/Accounts/customer/customer.compo
 import { LoginComponent } from "./components/login/login.component";
 import { CouponbyidComponent } from "./components/coupon Options/couponbyid + updateCoupon/couponbyid.component";
 import { GetCustomerByIdComponent } from './components/customer Options/get-customer-by-id/customerbyid.component';
+import { PurchaseCouponComponent } from './components/coupon Options/purchaseCoupon/purchaseCoupon.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -71,8 +72,8 @@ const routes: Routes = [
     children: [
       { path: "coupons", component: CouponsComponent },
       { path: "couponbyprice", component: CouponByPriceComponent },
-      { path: "couponbytype", component: CouponByTypeComponent }
-      // { path: "purchaseCoupon", component: PurchaseCouponComponent },
+      { path: "couponbytype", component: CouponByTypeComponent },
+      { path: "purchaseCoupon", component: PurchaseCouponComponent },
       // { path: "customer/get-all-customer-coupons", component: GetAllCustomerCouponsComponent },
     ]
   },

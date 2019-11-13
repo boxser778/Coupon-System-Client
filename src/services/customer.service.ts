@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Customer } from 'src/models/customer';
 import { SERVER_CUSTOMER_URL } from 'src/app/const';
 import { Coupon } from 'src/models/coupon';
+import { Company } from 'src/models/company';
 
 const COUPON_SERVER_URL = `${SERVER_CUSTOMER_URL}`;
 @Injectable({
@@ -16,5 +17,8 @@ export class CustomersService{
         return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${id}`);
       }
 
+      public purchaseCoupon(id:number,coupon:Coupon): Observable<Coupon> {
+        return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/${id}` ,coupon);
+      }
 
 }

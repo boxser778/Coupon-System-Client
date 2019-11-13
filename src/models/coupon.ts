@@ -1,3 +1,4 @@
+
 export class Coupon {
   public constructor(
     public id?: number,

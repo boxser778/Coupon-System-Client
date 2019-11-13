@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GetCompanyByIdComponent } from './components/company Options/get-company-by-id/get-company-by-id.component';
 import { CouponbyidComponent } from './components/coupon Options/couponbyid + updateCoupon/couponbyid.component';
 import { GetCustomerByIdComponent } from './components/customer Options/get-customer-by-id/customerbyid.component';
+import { PurchaseCouponComponent } from './components/coupon Options/purchaseCoupon/purchaseCoupon.component';
 
 
 
@@ -57,7 +58,8 @@ import { GetCustomerByIdComponent } from './components/customer Options/get-cust
     CouponByTypeComponent,
     GetCompanyByIdComponent,
     CouponbyidComponent,
-    GetCustomerByIdComponent],
+    GetCustomerByIdComponent,
+    PurchaseCouponComponent],
   imports: [BrowserModule,AppRoutingModule,FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [LayoutComponent]
