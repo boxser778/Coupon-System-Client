@@ -1,11 +1,24 @@
-<!-- <h1>Get Coupon By Type</h1> -->
+<label><h3>Please Insert Company Id Here:</h3></label>
+<input
+  type="number"
+  id="id"
+  [(ngModel)]="companyid"
+  [ngModelOptions]="{ standalone: true }"
+  placeholder="1,2,3,4.."
+/>
 
-
-<label><h3>Please Choose The Wanted Coupon Type: </h3></label>
-<select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
-  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
-</select>
-<br><br>
+<label><h3>Please Choose The Wanted Coupon Type:</h3></label>
+<!-- <select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
+  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{c.value}}</option>
+</select> -->
+<input
+  type="text"
+  type="type"
+  [(ngModel)]="chosenType"
+  [ngModelOptions]="{ standalone: true }"
+  placeholder="FOOD,DRINKS.."
+/>
+<br /><br />
 <button (click)="onSearch()">Search</button>
 
 <br /><br />
@@ -31,11 +44,9 @@
       <td>{{ c.amount }}</td>
       <td>{{ c.price }}</td>
       <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
-      <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
+      <td>{{ c.endDate }}</td>
       <td>{{ c.type }}</td>
       <td>{{ c.msg }}</td>
     </tr>
   </div>
 </table>
-
-

@@ -1,7 +1,15 @@
-<!-- <h1>Get Coupon By Price</h1> -->
 
-<label><h3>Please Insert The Wanted Price Here:</h3></label>
-<input type="number" price="price" [(ngModel)]="chosenPrice" [ngModelOptions]="{ standalone: true }" placeholder="40,20,100.." />
+<label><h3>Please Insert Company Id Here:</h3></label>
+<input
+  type="number"
+  id="id"
+  [(ngModel)]="companyid"
+  [ngModelOptions]="{ standalone: true }"
+  placeholder="1,2,3,4.."
+/>
+
+<label><h3>Please Choose The Wanted End Date Here: </h3></label>
+<input type="date" endDate="endDate" [(ngModel)]="chosenEndDate" [ngModelOptions]="{ standalone: true }" placeholder="endDate.." />
 <br><br>
 <button (click)="onSearch()">Search</button>
 
@@ -28,7 +36,7 @@
       <td>{{ c.amount }}</td>
       <td>{{ c.price }}</td>
       <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
-      <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
+      <td>{{ c.endDate }}</td>
       <td>{{ c.type }}</td>
       <td>{{ c.msg }}</td>
     </tr>

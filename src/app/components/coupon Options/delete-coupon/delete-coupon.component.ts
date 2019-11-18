@@ -17,42 +17,7 @@ export class DeleteCouponComponent  {
   
 
   constructor(private companyService:CompanysService, private activeatedRoute: ActivatedRoute, private router: Router) { }
-
-  // public ngOnInit(): void {
-
-    // const id = +this.activeatedRoute.snapshot.params.id;
-
-    // this.adminService
-    // .getOneCoupon(id)
-    // .subscribe(
-    //   coupon => {
-    //   this.coupon = coupon;
-    //   if(!coupon) {
-    //     alert("Coupon Id " + id + " Dosent Exist.");
-    //     this.router.navigate(["admin/coupons"]);
-    //   }
-    // },
-    // err => alert(err.message));
-
-  // }
-
-  // public deleteCoupon(): void {  
-    // this.adminService
-    // .deleteCoupon(this.coupon.id)
-    // .subscribe(
-    //   () => {
-    //     alert("Coupon has been successfully deleted");
-    //     this.router.navigate(["admin/coupons"]);
-    //   },
-    //   err => alert(err.message));
-    
-  //   }
-
-  //   public cancelDelete(): void {
-  //       this.router.navigate(["admin/coupons"]);
-  //   }
-  // }
-
+  
   public onSearch() {
     
     this.companyService.getOneCoupon(this.chosenCouponId).subscribe(coupon => {

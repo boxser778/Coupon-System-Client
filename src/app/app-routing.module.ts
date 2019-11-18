@@ -4,7 +4,7 @@ import { AdminComponent } from "./components/Accounts/admin/admin.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AdminGuardService } from "src/services/admin-guard.service";
 import { CompanysComponent } from "./components/company Options/companys/companys.component";
-import { CouponsComponent } from "./components/coupon Options/coupons/coupons.component";
+import { CouponsComponent } from "./components/coupon Options/company-coupons/coupons.component";
 import { CustomersComponent } from "./components/customer Options/customers/customers.component";
 import { DeleteCompanyComponent } from "./components/company Options/delete-company/delete-company.component";
 import { AddCompanyComponent } from "./components/company Options/add-company/add-company.component";
@@ -20,9 +20,6 @@ import { UpdateCustomerComponent } from "./components/customer Options/update-cu
 import { UpdateCouponComponent } from "./components/coupon Options/update-coupon/update-coupon.component";
 import { CompanyGuardService } from "src/services/company-guard.service";
 import { CompanyComponent } from "./components/Accounts/company/company.component";
-import { CouponByEndDateComponent } from "./components/coupon Options/coupon-by-end-date/coupon-by-end-date.component";
-import { CouponByPriceComponent } from "./components/coupon Options/coupon-by-price/coupon-by-price.component";
-import { CouponByTypeComponent } from "./components/coupon Options/coupon-by-type/coupon-by-type.component";
 import { GetCompanyByIdComponent } from "./components/company Options/get-company-by-id/get-company-by-id.component";
 import { CustomerGuardService } from "src/services/cusotmer-guard.service";
 import { CustomerComponent } from "./components/Accounts/customer/customer.component";
@@ -31,6 +28,9 @@ import { CouponbyidComponent } from "./components/coupon Options/couponbyid + up
 import { GetCustomerByIdComponent } from './components/customer Options/get-customer-by-id/customerbyid.component';
 import { PurchaseCouponComponent } from './components/coupon Options/purchaseCoupon/purchaseCoupon.component';
 import { CustomerCouponsComponent } from './components/coupon Options/customer-coupons/customer-coupons.component';
+import { CompanyCouponTypeComponent } from './components/coupon Options/company-coupons-by-type/company-coup-type.component';
+import { CompanyCouponPriceComponent } from './components/coupon Options/company-coupons-by-price/company-coup-price.component';
+import { CompanyCouponEndDateComponent } from './components/coupon Options/company-coupons-endate/company-coup-enddate.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -55,9 +55,9 @@ const routes: Routes = [
     component: CompanyComponent,
     children: [
       { path: "companycoupons", component: CouponsComponent },
-      { path: "couponbydate", component: CouponByEndDateComponent },
-      { path: "couponbyprice", component: CouponByPriceComponent },
-      { path: "couponbytype", component: CouponByTypeComponent },
+      { path: "couponbydate", component: CompanyCouponEndDateComponent },
+      { path: "couponbyprice", component: CompanyCouponPriceComponent },
+      { path: "couponbytype", component: CompanyCouponTypeComponent },
       { path: "companybyid", component: GetCompanyByIdComponent },
       { path: "couponbyid", component: CouponbyidComponent },
       { path: "createCoupon", component: AddCouponComponent },
@@ -71,8 +71,8 @@ const routes: Routes = [
     component: CustomerComponent,
     children: [
       { path: "customercoupons", component: CustomerCouponsComponent },
-      { path: "couponbyprice", component: CouponByPriceComponent },
-      { path: "couponbytype", component: CouponByTypeComponent },
+      // { path: "couponbyprice", component: CouponByPriceComponent },
+      // { path: "couponbytype", component: CompanyCouponTypeComponent },
       { path: "purchaseCoupon", component: PurchaseCouponComponent },
     ]
   },
