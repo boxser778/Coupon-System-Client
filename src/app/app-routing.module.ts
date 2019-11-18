@@ -30,6 +30,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { CouponbyidComponent } from "./components/coupon Options/couponbyid + updateCoupon/couponbyid.component";
 import { GetCustomerByIdComponent } from './components/customer Options/get-customer-by-id/customerbyid.component';
 import { PurchaseCouponComponent } from './components/coupon Options/purchaseCoupon/purchaseCoupon.component';
+import { CustomerCouponsComponent } from './components/coupon Options/customer-coupons/customer-coupons.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -53,8 +54,7 @@ const routes: Routes = [
     canActivate: [CompanyGuardService],
     component: CompanyComponent,
     children: [
-      // { path: "companyCoupons", component: CouponsComponent },
-      { path: "coupons", component: CouponsComponent },
+      { path: "companycoupons", component: CouponsComponent },
       { path: "couponbydate", component: CouponByEndDateComponent },
       { path: "couponbyprice", component: CouponByPriceComponent },
       { path: "couponbytype", component: CouponByTypeComponent },
@@ -70,11 +70,10 @@ const routes: Routes = [
     canActivate: [CustomerGuardService],
     component: CustomerComponent,
     children: [
-      { path: "coupons", component: CouponsComponent },
+      { path: "customercoupons", component: CustomerCouponsComponent },
       { path: "couponbyprice", component: CouponByPriceComponent },
       { path: "couponbytype", component: CouponByTypeComponent },
       { path: "purchaseCoupon", component: PurchaseCouponComponent },
-      // { path: "customer/get-all-customer-coupons", component: GetAllCustomerCouponsComponent },
     ]
   },
 

@@ -1,61 +1,43 @@
 <label><h3>Please Insert Company Id Here:</h3></label>
-<input type="number" id="id" [(ngModel)]="chosenCompanyId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
+<input
+  type="number"
+  id="id"
+  [(ngModel)]="chosenCompanyId"
+  [ngModelOptions]="{ standalone: true }"
+  placeholder="1,2,3,4.."
+/>
 
 <button (click)="onSearch()">Search</button>
 
 <br /><br />
 
-
-   
 <div *ngIf="company">
-      <h3>Company ID: {{ company.id }}</h3>
-      <h3>Company Name: {{ company.comp_Name }}</h3>
-      <h3>Company Email: {{ company.email }}</h3>
-      <h3>Company Password: {{ company.password }}</h3>
-     
-      <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Picture</th>
-        <th>Amount</th>
-        <th>Price</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Type</th>
-        <th>Messege</th>
-      </tr>
-    
-      <!-- <div *ngFor="let coupon of coupons; let i = index">  -->
-        <table>
-          <tr *ngFor="let company of coupons">
-           <td>{{company.coupons}}</td>
-          </tr>
-      </table>
-      <!-- <tr>
-        <td>{{ c.id }}</td>
-        <td>
-          {{ c.title }}
-        </td>
-        <td><img [src]="c.picture" alt="picture" /></td>
-        <td>{{ c.amount }}</td>
-        <td>{{ c.price }}</td>
-        <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
-        <td>{{ c.endDate | date: "dd/MM/yyyy" }}</td>
-        <td>{{ c.type }}</td>
-        <td>{{ c.msg }}</td>
-      </tr>  -->
-  </div>
-  
- 
+  <h3>Company ID: {{ company.id }}</h3>
+  <h3>Company Name: {{ company.comp_Name }}</h3>
+  <h3>Company Email: {{ company.email }}</h3>
+  <h3>Company Password: {{ company.password }}</h3>
+</div>
 
 <br /><br />
 
 <form *ngIf="company">
   <h3>Choose New Company Email To Your Company:</h3>
-  <input type="text" Email="email" [(ngModel)]="company.email" [ngModelOptions]="{ standalone: true }" placeholder="Cola@walla.com..." />
+  <input
+    type="text"
+    Email="email"
+    [(ngModel)]="company.email"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Cola@walla.com..."
+  />
   <br />
   <h3>Choose New Company Password To Your Company:</h3>
-  <input type="text" Password="password" [(ngModel)]="company.password" [ngModelOptions]="{ standalone: true }" placeholder="1123..." />
+  <input
+    type="text"
+    Password="password"
+    [(ngModel)]="company.password"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="1123..."
+  />
   <br />
   <br />
   <button (click)="updateCompany()">Update Company</button>

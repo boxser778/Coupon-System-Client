@@ -31,6 +31,8 @@ import { GetCompanyByIdComponent } from './components/company Options/get-compan
 import { CouponbyidComponent } from './components/coupon Options/couponbyid + updateCoupon/couponbyid.component';
 import { GetCustomerByIdComponent } from './components/customer Options/get-customer-by-id/customerbyid.component';
 import { PurchaseCouponComponent } from './components/coupon Options/purchaseCoupon/purchaseCoupon.component';
+import { CouponComponent } from './component/coupon/coupon.component';
+import { CustomerCouponsComponent } from './components/coupon Options/customer-coupons/customer-coupons.component';
 
 
 
@@ -59,7 +61,8 @@ import { PurchaseCouponComponent } from './components/coupon Options/purchaseCou
     GetCompanyByIdComponent,
     CouponbyidComponent,
     GetCustomerByIdComponent,
-    PurchaseCouponComponent],
+    PurchaseCouponComponent,
+    CouponComponent,CustomerCouponsComponent],
   imports: [BrowserModule,AppRoutingModule,FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [LayoutComponent]

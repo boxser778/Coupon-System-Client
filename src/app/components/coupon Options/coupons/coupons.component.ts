@@ -1,25 +1,33 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { Coupon } from "src/models/coupon";
-import { Observable } from "rxjs";
-import { AdminService } from "src/services/admin.service";
 import { CompanysService } from "src/services/company.service";
 import { LoginServiceService } from "src/services/loginServiceService";
+import { Company } from "src/models/company";
 
 @Component({
   selector: "app-coupons",
   templateUrl: "./coupons.component.html",
   styleUrls: ["./coupons.component.css"]
 })
-export class CouponsComponent implements OnInit {
+export class CouponsComponent {
+
+
+  public constructor(
+    private companyService: CompanysService,
+    private loginService: LoginServiceService
+  ) {}
+
   public coupons: Coupon[];
-  //   public coupons$: Observable<Coupon[]>;
+  public companyid:number;
 
-  public constructor(private companyService: CompanysService) {}
-
-  public ngOnInit(): void {
-    this.companyService.getAllCoupons().subscribe(coupons => {
-      this.coupons = coupons;
-    }),
-      err => alert(err.message);
+ public onsearch():void {
+     this.companyService.getAllCoupons(this.companyid).subscribe(coupons => {
+      return this.coupons = coupons;
+   })
+   console.log(this.coupons);
+    err => alert(err.message);
   }
+  
 }
+
+

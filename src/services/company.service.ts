@@ -5,6 +5,8 @@ import { Company } from "src/models/company";
 import { Coupon } from "src/models/coupon";
 import { couponType } from "src/models/couponType";
 import { SERVER_COMPANY_URL } from 'src/app/const';
+import { LoginServiceService } from './loginServiceService';
+import { UrlsServiceService } from './UrlsServiceService';
 
 const COUPON_SERVER_URL = `${SERVER_COMPANY_URL}`;
 
@@ -12,7 +14,7 @@ const COUPON_SERVER_URL = `${SERVER_COMPANY_URL}`;
   providedIn: "root"
 })
 export class CompanysService {
-  public constructor(private httpClient: HttpClient) {}
+  public constructor(private httpClient: HttpClient,private loginService:LoginServiceService,private urlsService:UrlsServiceService) {}
 
   public addCoupon(id:number, coupon: Coupon): Observable<Coupon> {
     return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/` + id, coupon, {
@@ -32,8 +34,9 @@ export class CompanysService {
     return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon` + id);
   }
 
-  public getAllCoupons(): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon`);
+  public getAllCoupons(id:number): Observable<Coupon[]> {
+    // let url = this.urlsService.getCompanyUrl() + this.getAllCoupons + "/"+ id + this.loginService.token;
+    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${id}`);
   }
 
   public getCouponByPrice(price): Observable<Coupon[]> {
@@ -44,7 +47,7 @@ export class CompanysService {
     return this.httpClient.get<Coupon[]>("http://localhost:8080/company/couponByType/" + type);
   }
 
-  public getCompanyById(id: number): Observable<Company> {
+  public getCompanyById(id:number): Observable<Company> {
     return this.httpClient.get<Company>(`${COUPON_SERVER_URL}/company/${id}`);
   }
 
