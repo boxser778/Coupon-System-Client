@@ -12,6 +12,7 @@ import { dateStringToNumber } from 'src/app/Utils/dateUtilConvertor';
     providers: [EnumToArrayPipe]
   })
   export class CompanyCouponEndDateComponent {
+
     
     constructor(private companyService: CompanysService, private router: Router) {}
     
@@ -25,10 +26,10 @@ import { dateStringToNumber } from 'src/app/Utils/dateUtilConvertor';
           }
         
           private updateCouponsByEndDate(endDate: number) {
-            // this.companyService.getCouponByEndDate(this.companyid,this.endDate).subscribe(coupons => {
-              // this.coupons = coupons;
-              // console.log(this.coupons);
-            // }),
+            this.companyService.getCouponByEndDate(this.companyid,endDate).subscribe(coupons => {
+              this.coupons = coupons;
+              console.log(this.coupons);
+            }),
               err => {
                 alert(err.message);
                 this.coupons = undefined;

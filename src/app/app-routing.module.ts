@@ -8,16 +8,10 @@ import { CouponsComponent } from "./components/coupon Options/company-coupons/co
 import { CustomersComponent } from "./components/customer Options/customers/customers.component";
 import { DeleteCompanyComponent } from "./components/company Options/delete-company/delete-company.component";
 import { AddCompanyComponent } from "./components/company Options/add-company/add-company.component";
-import { InspectCompanyComponent } from "./components/company Options/inspect-company/inspect-company.component";
 import { AddCustomerComponent } from "./components/customer Options/add-customer/add-customer.component";
 import { AddCouponComponent } from "./components/coupon Options/add-coupon/add-coupon.component";
 import { DeleteCustomerComponent } from "./components/customer Options/delete-customer/delete-customer.component";
-import { InspectCouponComponent } from "./components/coupon Options/inspect-coupon/inspect-coupon.component";
-import { InspectCustomerComponent } from "./components/customer Options/inspect-customer/inspect-customer.component";
 import { DeleteCouponComponent } from "./components/coupon Options/delete-coupon/delete-coupon.component";
-import { UpdateCompanyComponent } from "./components/company Options/update-company/update-company.component";
-import { UpdateCustomerComponent } from "./components/customer Options/update-customer/update-customer.component";
-import { UpdateCouponComponent } from "./components/coupon Options/update-coupon/update-coupon.component";
 import { CompanyGuardService } from "src/services/company-guard.service";
 import { CompanyComponent } from "./components/Accounts/company/company.component";
 import { GetCompanyByIdComponent } from "./components/company Options/get-company-by-id/get-company-by-id.component";
@@ -31,6 +25,8 @@ import { CustomerCouponsComponent } from './components/coupon Options/customer-c
 import { CompanyCouponTypeComponent } from './components/coupon Options/company-coupons-by-type/company-coup-type.component';
 import { CompanyCouponPriceComponent } from './components/coupon Options/company-coupons-by-price/company-coup-price.component';
 import { CompanyCouponEndDateComponent } from './components/coupon Options/company-coupons-endate/company-coup-enddate.component';
+import { CustomerCouponPriceComponent } from './components/coupon Options/customer-coupons-by-price/customer-coup-price.component';
+import { CustomerCouponTypeComponent } from './components/coupon Options/customer-coupons-by-type/customer-coup-type.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -61,7 +57,6 @@ const routes: Routes = [
       { path: "companybyid", component: GetCompanyByIdComponent },
       { path: "couponbyid", component: CouponbyidComponent },
       { path: "createCoupon", component: AddCouponComponent },
-      { path: "updateCoupon", component: UpdateCouponComponent },
       { path: "deleteCoupon", component: DeleteCouponComponent }
     ]
   },
@@ -71,8 +66,8 @@ const routes: Routes = [
     component: CustomerComponent,
     children: [
       { path: "customercoupons", component: CustomerCouponsComponent },
-      // { path: "couponbyprice", component: CouponByPriceComponent },
-      // { path: "couponbytype", component: CompanyCouponTypeComponent },
+      { path: "couponbyprice", component: CustomerCouponPriceComponent },
+      { path: "couponbytype", component: CustomerCouponTypeComponent },
       { path: "purchaseCoupon", component: PurchaseCouponComponent },
     ]
   },

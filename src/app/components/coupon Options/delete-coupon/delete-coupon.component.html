@@ -1,3 +1,5 @@
+<label><h3>Please Insert Company Id Here:</h3></label>
+<input type="number" id="id" [(ngModel)]="chosenCompanyId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
 
 <label><h3>Please Insert Coupon Id Here:</h3></label>
 <input type="number" id="id" [(ngModel)]="chosenCouponId" [ngModelOptions]="{ standalone: true }" placeholder="1,2,3,4.." />
@@ -6,8 +8,7 @@
 
 <h2>Are you sure you want to delete this coupon?</h2>
 
-
-<div *ngIf = "coupon">
+<div *ngIf="coupon">
   <h3>Id: {{ coupon.id }}</h3>
   <h3>Title: {{ coupon.title }}</h3>
   <h3>Picture: {{ coupon.picture }}</h3>
@@ -17,11 +18,9 @@
   <h3>End Date: {{ coupon.endDate }}</h3>
   <h3>Type: {{ coupon.type }}</h3>
   <h3>Messege: {{ coupon.msg }}</h3>
-  <h3>Company: {{ Company }}</h3>
 </div>
 
-<br>
+<br />
 
-<button (click) = "deleteCoupon()">Sure! Delete This Coupon</button>
-<button (click) = "cancelDelete()" >No! Back to List</button>
-
+<button (click)="deleteCoupon()">Sure! Delete This Coupon</button>
+<button (click)="cancelDelete()">No! Back to List</button>

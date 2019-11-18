@@ -16,13 +16,13 @@ export class CouponbyidComponent {
 
   constructor(private companyService: CompanysService, private router: Router,private loginService: LoginServiceService) {}
 
-  public chosenId: number;
-  // public coupons: Coupon[];
+  public companyid:number;
+  public couponid: number;
   activatedRoute: any;
   public coupon: Coupon;
 
   public onSearch() {
-    this.companyService.getCouponById(this.chosenId).subscribe(coupon => {
+    this.companyService.getOneCoupon(this.companyid,this.couponid).subscribe(coupon => {
       this.coupon = coupon;
       console.log(this.coupon);
     }),

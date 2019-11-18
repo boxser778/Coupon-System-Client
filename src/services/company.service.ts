@@ -26,38 +26,38 @@ export class CompanysService {
     return this.httpClient.delete<{}>(`${COUPON_SERVER_URL}/coupon/${id}`);
   }
 
-  public getCouponByEndDate(id:number,endDate:number): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbyenddate/${id}/${endDate}`);
+  public getCouponByEndDate(companyid:number,endDate:number): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbyenddate/${companyid}/${endDate}`);
   }
 
-  public getOneCoupon(id: number): Observable<Coupon> {
-    return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${id}`);
+  public getOneCoupon(companyid: number,couponid:number): Observable<Coupon> {
+    return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${companyid}/${couponid}`);
   }
 
-  public getAllCoupons(id:number): Observable<Coupon[]> {
+  public getAllCoupons(companyid:number): Observable<Coupon[]> {
     // let url = this.urlsService.getCompanyUrl() + this.getAllCoupons + "/"+ id + this.loginService.token;
-    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${id}`);
+    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${companyid}`);
   }
 
-  public getCouponByPrice(id:number,price:number): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbyprice/${id}/${price}`);
+  public getCouponByPrice(companyid:number,price:number): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbyprice/${companyid}/${price}`);
   }
 
-  public getCouponByType(id:number,type:couponType): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbytype/${id}/${type}`);
+  public getCouponByType(companyid:number,type:couponType): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbytype/${companyid}/${type}`);
   }
 
-  public getCompanyById(id:number): Observable<Company> {
-    return this.httpClient.get<Company>(`${COUPON_SERVER_URL}/company/${id}`);
+  public getCompanyById(companyid:number): Observable<Company> {
+    return this.httpClient.get<Company>(`${COUPON_SERVER_URL}/company/${companyid}`);
   }
 
   public updateCoupon(coupon: Coupon): Observable<Coupon> {
     return this.httpClient.put<Coupon>("http://localhost:8080/company/coupon/" + coupon.id, coupon);
   }
 
-  public getCouponById(id: number): Observable<Coupon> {
-    return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${id}`);
-  }
+  // public getCouponById(id: number): Observable<Coupon> {
+  //   return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${id}`);
+  // }
 
   public updateCompany(company: Company): Observable<Company> {
     return this.httpClient.put<Company>("http://localhost:8080/company/company/" + company.id, company);
