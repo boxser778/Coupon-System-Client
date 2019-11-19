@@ -5,6 +5,7 @@ import { Company } from "src/models/company";
 import { Coupon } from "src/models/coupon";
 import { Customer } from "src/models/customer";
 import { SERVER_ADMIN_URL } from 'src/app/const';
+import { Income } from 'src/models/income';
 
 
 const COUPON_SERVER_URL = `${SERVER_ADMIN_URL}`;
@@ -77,4 +78,8 @@ export class AdminService {
   // public updateCoupon(coupon: Coupon): Observable<Coupon> {
   //   return this.httpClient.put<Coupon>("http://localhost:8080/coupon-system/admin/coupon/" + coupon.id, coupon);
   // }
+
+  public allIncome():Observable<Income[]> {
+    return this.httpClient.get<Income[]>(`${SERVER_ADMIN_URL}/viewallincome`)
+  }
 }

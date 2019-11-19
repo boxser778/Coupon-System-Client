@@ -21,13 +21,13 @@ export class PurchaseCouponComponent {
   constructor(private customerService: CustomersService) {}
 
   public buyCoupon(): void {
-  //   this.customerService.purchaseCoupon(this.customerId, this.chosenCouponId).subscribe(coupon => {
-  //     this.coupon = coupon;
-  //     console.log(this.coupon);
-  //   }),
-  //     err => {
-  //       alert(err.message);
-  //       this.coupon = undefined;
-  //     };
+    this.customerService.purchaseCoupon(this.customerId,this.coupon).subscribe(coupon => {
+      this.coupon = coupon;
+      console.log(this.coupon);
+    }),
+      err => {
+        alert(err.message);
+        this.coupon = undefined;
+      };
   }
 }

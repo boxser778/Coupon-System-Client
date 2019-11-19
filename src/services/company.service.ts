@@ -51,8 +51,8 @@ export class CompanysService {
     return this.httpClient.get<Company>(`${COUPON_SERVER_URL}/company/${companyid}`);
   }
 
-  public updateCoupon(coupon: Coupon): Observable<Coupon> {
-    return this.httpClient.put<Coupon>("http://localhost:8080/company/coupon/" + coupon.id, coupon);
+  public updateCoupon(couponid:number,coupon: Coupon): Observable<Coupon> {
+    return this.httpClient.put<Coupon>(`${COUPON_SERVER_URL}/company/coupon/${couponid}` ,  coupon);
   }
 
   // public getCouponById(id: number): Observable<Coupon> {

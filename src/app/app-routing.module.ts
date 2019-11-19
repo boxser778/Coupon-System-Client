@@ -27,6 +27,7 @@ import { CompanyCouponPriceComponent } from './components/coupon Options/company
 import { CompanyCouponEndDateComponent } from './components/coupon Options/company-coupons-endate/company-coup-enddate.component';
 import { CustomerCouponPriceComponent } from './components/coupon Options/customer-coupons-by-price/customer-coup-price.component';
 import { CustomerCouponTypeComponent } from './components/coupon Options/customer-coupons-by-type/customer-coup-type.component';
+import { AllIncomeComponent } from './components/Income Options/viewallincome/allincome.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -42,7 +43,8 @@ const routes: Routes = [
       { path: "companybyid", component: GetCompanyByIdComponent },
       { path: "customerbyid", component: GetCustomerByIdComponent },
       { path: "deleteCompany", component: DeleteCompanyComponent },
-      { path: "deleteCustomer", component: DeleteCustomerComponent }
+      { path: "deleteCustomer", component: DeleteCustomerComponent },
+      { path: "allincome", component: AllIncomeComponent }
     ]
   },
   {
