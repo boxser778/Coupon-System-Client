@@ -28,6 +28,10 @@ export class CustomersService{
         return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/couponbytype/${customerid}/${type}`);
       }
 
+      public getOneCoupon(companyid: number,couponid:number): Observable<Coupon> {
+        return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${companyid}/${couponid}`);
+      }
+
   
 
 }

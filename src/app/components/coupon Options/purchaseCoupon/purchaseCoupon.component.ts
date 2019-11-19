@@ -16,18 +16,24 @@ import { CompanysService } from "src/services/company.service";
 export class PurchaseCouponComponent {
   public customerId: number;
   public chosenCouponId: number;
-  public coupon: Coupon;
+  public coupon:Coupon;
+  public companyId:number;
 
   constructor(private customerService: CustomersService) {}
 
   public buyCoupon(): void {
-  //   this.customerService.purchaseCoupon(this.customerId, this.chosenCouponId).subscribe(coupon => {
-  //     this.coupon = coupon;
-  //     console.log(this.coupon);
-  //   }),
-  //     err => {
-  //       alert(err.message);
-  //       this.coupon = undefined;
-  //     };
-  }
-}
+    this.customerService.getOneCoupon(this.companyId,this.chosenCouponId).subscribe(coupon => {
+      coupon = coupon;
+      console.log(coupon);
+      this.customerService.purchaseCoupon(this.customerId,coupon).subscribe(() =>
+     (coupon) => alert("Coupon Was Created"));
+    }),
+    // this.customerService.getOneCoupon(this.companyId,this.chosenCouponId).subscribe(coupon => this.coupon = coupon)
+    
+  
+      err => {
+        alert(err.message);
+        this.coupon = undefined;
+      };
+    }}
+

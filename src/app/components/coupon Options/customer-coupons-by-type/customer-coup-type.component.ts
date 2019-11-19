@@ -10,7 +10,7 @@ import { couponType } from 'src/models/couponType';
 @Component({
     selector: "app-customer-coup-type",
     templateUrl: "./customer-coup-type.component.html",
-    // styleUrls: ["./customer-coup-type.component.css"],
+    styleUrls: ["./customer-coup-type.component.css"],
     providers: [EnumToArrayPipe]
   })
   export class CustomerCouponTypeComponent {
