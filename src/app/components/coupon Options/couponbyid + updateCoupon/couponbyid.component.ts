@@ -34,7 +34,7 @@ export class CouponbyidComponent {
 
   
   public updateCoupon(): void {
-      this.companyService.updateCoupon(this.coupon).subscribe(
+      this.companyService.updateCoupon(this.couponid,this.coupon).subscribe(
         coupon => {
           alert("Coupon has been updated!");
   

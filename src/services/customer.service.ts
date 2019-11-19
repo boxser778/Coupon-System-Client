@@ -12,12 +12,12 @@ const COUPON_SERVER_URL = `${SERVER_CUSTOMER_URL}`;
 export class CustomersService{
     public constructor (private httpClient: HttpClient){}
 
-    public getAllCoupons(id:number): Observable<Coupon[]> {
-        return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${id}`);
+    public getAllCoupons(customerid:number): Observable<Coupon[]> {
+        return this.httpClient.get<Coupon[]>(`${COUPON_SERVER_URL}/coupon/${customerid}`);
       }
 
-      public purchaseCoupon(id:number,coupon:Coupon): Observable<Coupon> {
-        return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/${id}` ,coupon);
+      public purchaseCoupon(customerid:number,coupon:Coupon): Observable<Coupon> {
+        return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/${customerid}` ,coupon);
       }
 
       public getCouponByPrice(customerid:number,price:number): Observable<Coupon[]> {

@@ -32,6 +32,7 @@ import { CompanyCouponPriceComponent } from "./components/coupon Options/company
 import { CompanyCouponEndDateComponent } from "./components/coupon Options/company-coupons-endate/company-coup-enddate.component";
 import { CustomerCouponPriceComponent } from './components/coupon Options/customer-coupons-by-price/customer-coup-price.component';
 import { CustomerCouponTypeComponent } from './components/coupon Options/customer-coupons-by-type/customer-coup-type.component';
+import { AllIncomeComponent } from './components/Income Options/viewallincome/allincome.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CustomerCouponTypeComponent } from './components/coupon Options/custome
     CompanyCouponPriceComponent,
     CompanyCouponEndDateComponent,
     CustomerCouponPriceComponent,
-    CustomerCouponTypeComponent
+    CustomerCouponTypeComponent,
+    AllIncomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
