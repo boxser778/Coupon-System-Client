@@ -4,6 +4,7 @@ import { AdminService } from "src/services/admin.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CompanysService } from "src/services/company.service";
 import { Company } from "src/models/company";
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 @Component({
   selector: "app-delete-coupon",
@@ -15,10 +16,10 @@ export class DeleteCouponComponent {
   public chosenCouponId: number;
   public chosenCompanyId:number;
 
-  constructor(private companyService: CompanysService, private activeatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private companyService: CompanysService, private activeatedRoute: ActivatedRoute, private router: Router,public loginService:LoginServiceService) {}
 
   public onSearch() {
-    this.companyService.getOneCoupon(this.chosenCompanyId,this.chosenCouponId).subscribe(coupon => {
+    this.companyService.getOneCoupon(this.loginService.id,this.chosenCouponId).subscribe(coupon => {
       this.coupon = coupon;
       console.log(this.coupon);
     }),
@@ -29,7 +30,7 @@ export class DeleteCouponComponent {
   }
 
   public deleteCoupon(): void {
-    this.companyService.deleteCoupon(this.chosenCouponId).subscribe(
+    this.companyService.deleteCoupon(this.loginService.id,this.chosenCouponId).subscribe(
       () => {
         alert("Company has been successfully deleted");
         this.router.navigate(["company/coupons"]);

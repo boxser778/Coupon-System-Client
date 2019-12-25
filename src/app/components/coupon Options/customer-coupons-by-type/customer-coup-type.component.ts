@@ -4,6 +4,7 @@ import { Coupon } from 'src/models/coupon';
 import { CustomersService } from 'src/services/customer.service';
 import { Router } from '@angular/router';
 import { couponType } from 'src/models/couponType';
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 
 
@@ -16,7 +17,7 @@ import { couponType } from 'src/models/couponType';
   export class CustomerCouponTypeComponent {
     
    public coupon = new Coupon();
-    constructor(private customerService: CustomersService, private router: Router) {}
+    constructor(private customerService: CustomersService, private router: Router, private loginService: LoginServiceService) {}
 
     public couponType = couponType;
     public chosenType: couponType;
@@ -24,7 +25,7 @@ import { couponType } from 'src/models/couponType';
     public coupons: Coupon[];
 
     public onSearch() {
-        this.customerService.getCouponByType(this.customerid,this.chosenType).subscribe(coupons => {
+        this.customerService.getCouponByType(this.loginService.id,this.chosenType).subscribe(coupons => {
           this.coupons = coupons;
           console.log(this.coupons);
         }),

@@ -7,6 +7,7 @@ import { dateStringToNumber } from "src/app/Utils/dateUtilConvertor";
 import { CompanysService } from "src/services/company.service";
 import { LoginServiceService } from "src/services/loginServiceService";
 import { Company } from "src/models/company";
+import { User } from "src/models/user";
 
 @Component({
   selector: "app-add-coupon",
@@ -21,36 +22,34 @@ export class AddCouponComponent {
   public startDate: string;
   public endDate: string;
   public company: Company;
-  public chosenCompanyId: number;
 
   constructor(
-    private companyService: CompanysService  ) {}
+    private companyService: CompanysService,
+    private loginService: LoginServiceService,
+    private router:Router
+  ) {}
 
   public addCoupon(): void {
+      this.coupon.endDate = dateStringToNumber(this.endDate);
     
-    this.companyService.getCompanyById(this.chosenCompanyId).subscribe(company => {
-      (this.company = company), this.coupon;
-
-        console.log(this.company);
-        
-    // this.coupon.startDate = dateStringToNumber(this.startDate);
-    this.coupon.endDate = dateStringToNumber(this.endDate);
-
         this.companyService
-          .addCoupon(this.chosenCompanyId, this.coupon)
-          .subscribe(
-            () => {
-              // alert("Coupon has been successfully Added.");
-              // this.router.navigate(["company/coupons"]);
-            },
-            () => alert("Coupon Was Created")
-            //  err => alert(err.message)
-            // err => alert("Coupon Title Allready Exist!")
+        .addCoupon(this.coupon,this.loginService.id)
+        .subscribe(
+          () => {
+            alert("Coupon has been successfully Added.");
+                  this.router.navigate(["rest/company/coupons"]);
+          },
+        
+          () => alert("Coupon Was Created")
+
+        
           );
-      }),
-      err => {
-        alert(err.message);
-        this.company = undefined;
-      };
+    // }),
+      // err => {
+      //   alert(err.message);
+      //   this.company = undefined;
+      // };
   }
 }
+
+

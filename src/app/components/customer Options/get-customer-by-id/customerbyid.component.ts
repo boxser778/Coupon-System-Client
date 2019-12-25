@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginServiceService } from 'src/services/loginServiceService';
 import { AdminService } from 'src/services/admin.service';
 import { Customer } from 'src/models/customer';
+import { Coupon } from 'src/models/coupon';
 
 @Component({
     selector: "app-customerbyid",
@@ -21,7 +22,7 @@ import { Customer } from 'src/models/customer';
       public customer: Customer;
     
       public onSearch() {
-        if (this.loginService.isAdmin) {
+        if (this.loginService.isAdmin()) {
           this.adminService.getOneCustomer(this.chosenCustomerId).subscribe(customer => {
             this.customer = customer;
             console.log(this.customer);
@@ -34,9 +35,9 @@ import { Customer } from 'src/models/customer';
   }
       }
   public updateCustomer(): void {
-    if (this.loginService.isAdmin) {
+    if (this.loginService.isAdmin()) {
       this.adminService.updateCustomer(this.customer).subscribe(
-        customer => {
+       customer => {
           alert("Customer has been updated!");
   
           this.router.navigate(["admin/customers"]);

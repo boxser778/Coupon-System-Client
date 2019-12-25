@@ -1,15 +1,17 @@
-<label><h3>Please Insert Company Id Here:</h3></label>
-<input
-  type="number"
-  id="id"
-  [(ngModel)]="chosenCompanyId"
-  [ngModelOptions]="{ standalone: true }"
-  placeholder="1,2,3,4.."
-/>
+<ng-container *ngIf="isAdmin">
+  <label><h3>Please Insert Company Id Here:</h3></label>
+  <input
+    type="number"
+    id="id"
+    [(ngModel)]="chosenCompanyId"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="1,2,3,4.."
+  />
 
-<button (click)="onSearch()">Search</button>
+  <button (click)="onSearch()">Search</button>
 
-<br /><br />
+  <br /><br />
+</ng-container>
 
 <div *ngIf="company">
   <h3>Company ID: {{ company.id }}</h3>
@@ -20,7 +22,7 @@
 
 <br /><br />
 
-<form *ngIf="company">
+<form *ngIf="company && isAdmin">
   <h3>Choose New Company Email To Your Company:</h3>
   <input
     type="text"

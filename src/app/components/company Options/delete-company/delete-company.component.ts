@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Company } from "src/models/company";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AdminService } from "src/services/admin.service";
+import { tokenKey } from '@angular/core/src/view';
 
 @Component({
   selector: "app-delete-company",
@@ -9,7 +10,6 @@ import { AdminService } from "src/services/admin.service";
 })
 export class DeleteCompanyComponent {
   public company: Company;
-
   public chosenCompanyId: number;
 
   constructor(private adminService: AdminService, private activeatedRoute: ActivatedRoute, private router: Router) {}

@@ -1,5 +1,5 @@
 import { CustomersService } from "src/services/customer.service";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { LoginServiceService } from "src/services/loginServiceService";
 import { Coupon } from "src/models/coupon";
 
@@ -8,14 +8,14 @@ import { Coupon } from "src/models/coupon";
   templateUrl: "./customer-coupons.component.html",
   styleUrls: ["./customer-coupons.component.css"]
 })
-export class CustomerCouponsComponent {
+export class CustomerCouponsComponent implements OnInit{
   public constructor(private customerService: CustomersService) {}
 
   public coupons: Coupon[];
   public customerid: number;
 
-  public onsearch(): void {
-    this.customerService.getAllCoupons(this.customerid).subscribe(coupons => {
+  ngOnInit(): void {
+    this.customerService.getAllCoupons().subscribe(coupons => {
       return (this.coupons = coupons);
     });
     console.log(this.coupons);

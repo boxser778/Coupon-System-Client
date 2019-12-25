@@ -7,6 +7,7 @@ import { Coupon } from "src/models/coupon";
 import { CompanysService } from "src/services/company.service";
 
 import { Router } from "@angular/router";
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 @Component({
   selector: "app-company-coup-price",
@@ -17,16 +18,17 @@ import { Router } from "@angular/router";
 export class CompanyCouponPriceComponent {
   constructor(
     private companyService: CompanysService,
-    private router: Router
+    private router: Router,
+    public loginService:LoginServiceService
   ) {}
 
-  public companyid: number;
+
   public chosenprice: number;
   public coupons: Coupon[];
 
   public onSearch() {
     this.companyService
-      .getCouponByPrice(this.companyid, this.chosenprice)
+      .getCouponByPrice(this.loginService.id, this.chosenprice)
       .subscribe(coupons => {
         this.coupons = coupons;
         console.log(this.coupons);

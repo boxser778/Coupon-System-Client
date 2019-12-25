@@ -1,15 +1,6 @@
-<label><h3>Please Insert Company Id Here:</h3></label>
-<input
-  type="number"
-  id="id"
-  [(ngModel)]="companyid"
-  [ngModelOptions]="{ standalone: true }"
-  placeholder="1,2,3,4.."
-/>
-
 <label><h3>Please Choose The Wanted Coupon Type:</h3></label>
 <!-- <select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
-  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{c.value}}</option>
+  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
 </select> -->
 <input
   type="text"
@@ -43,7 +34,7 @@
       <td><img [src]="c.picture" alt="picture" /></td>
       <td>{{ c.amount }}</td>
       <td>{{ c.price }}</td>
-      <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
+      <td>{{ c.startDate }}</td>
       <td>{{ c.endDate }}</td>
       <td>{{ c.type }}</td>
       <td>{{ c.msg }}</td>

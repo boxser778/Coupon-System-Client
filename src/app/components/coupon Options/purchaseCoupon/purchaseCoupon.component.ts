@@ -19,21 +19,23 @@ export class PurchaseCouponComponent {
   public coupon:Coupon;
   public companyId:number;
 
-  constructor(private customerService: CustomersService) {}
+  constructor(private customerService: CustomersService,private loginService:LoginServiceService) {}
 
   public buyCoupon(): void {
-    this.customerService.getOneCoupon(this.companyId,this.chosenCouponId).subscribe(coupon => {
-      coupon = coupon;
+  // if (this.loginService.isCustomer()) {
+    this.customerService.getOneCoupon(this.loginService.id,this.chosenCouponId).subscribe(coupon => {
+      this.coupon = coupon;
       console.log(coupon);
-      this.customerService.purchaseCoupon(this.customerId,coupon).subscribe(() =>
-     (coupon) => alert("Coupon Was Created"));
+      this.customerService.purchaseCoupon(this.loginService.id,this.companyId,coupon).subscribe(() =>
+      () => alert("Coupon was created!"))
     }),
-    // this.customerService.getOneCoupon(this.companyId,this.chosenCouponId).subscribe(coupon => this.coupon = coupon)
-    
+    err => {
+      alert(err.message);
+      this.coupon = undefined;
+    };
+
   
-      err => {
-        alert(err.message);
-        this.coupon = undefined;
-      };
-    }}
+  }
+  // }
+}
 

@@ -70,7 +70,7 @@ const routes: Routes = [
       { path: "customercoupons", component: CustomerCouponsComponent },
       { path: "couponbyprice", component: CustomerCouponPriceComponent },
       { path: "couponbytype", component: CustomerCouponTypeComponent },
-      { path: "purchaseCoupon", component: PurchaseCouponComponent },
+      { path: "purchaseCoupon", component: PurchaseCouponComponent }
     ]
   },
 

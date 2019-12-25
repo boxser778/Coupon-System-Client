@@ -4,6 +4,7 @@ import { Coupon } from 'src/models/coupon';
 import { CompanysService } from 'src/services/company.service';
 import { Router } from '@angular/router';
 import { dateStringToNumber } from 'src/app/Utils/dateUtilConvertor';
+import { LoginServiceService } from 'src/services/loginServiceService';
 
 @Component({
     selector: "app-company-coup-enddate",
@@ -14,7 +15,7 @@ import { dateStringToNumber } from 'src/app/Utils/dateUtilConvertor';
   export class CompanyCouponEndDateComponent {
 
     
-    constructor(private companyService: CompanysService, private router: Router) {}
+    constructor(private companyService: CompanysService, private router: Router, public loginService:LoginServiceService) {}
     
     public companyid:number;
     public coupons: Coupon[];
@@ -26,7 +27,7 @@ import { dateStringToNumber } from 'src/app/Utils/dateUtilConvertor';
           }
         
           private updateCouponsByEndDate(endDate: number) {
-            this.companyService.getCouponByEndDate(this.companyid,endDate).subscribe(coupons => {
+            this.companyService.getCouponByEndDate(this.loginService.id,endDate).subscribe(coupons => {
               this.coupons = coupons;
               console.log(this.coupons);
             }),

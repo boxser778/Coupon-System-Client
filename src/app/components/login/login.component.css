@@ -1,39 +1,38 @@
-section{
-    height: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    font-size:25px;
+section {
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 25px;
 }
 
 #name {
-    
-    color: rgb(0, 0, 0);
-    font-family:aharoni;
+  color: rgb(0, 0, 0);
+  font-family: aharoni;
 }
 
-#password{
-    color: rgb(0, 0, 0);
-    font-family:aharoni;
+#password {
+  color: rgb(0, 0, 0);
+  font-family: aharoni;
 }
 
-#type1{
-    color: rgb(0, 0, 0);
-    font-family:aharoni;
+#type1 {
+  color: rgb(0, 0, 0);
+  font-family: aharoni;
 }
 
-#pp{
-    font-family:  Arial, Helvetica, sans-serif ;
-    font-weight: bold;
+#pp {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
-img:hover{
-	filter: grayscale(50%);
+img:hover {
+  filter: grayscale(50%);
 }
 
-div:nth-of-type(2){
-    position: absolute;
-    border: 0.5px solid black;
-    top: 120px;
-    right: 20px;
-    padding: 10px;
+div:nth-of-type(2) {
+  position: absolute;
+  border: 0.5px solid black;
+  top: 120px;
+  right: 20px;
+  padding: 10px;
 }

@@ -1,4 +1,4 @@
-<label><h3>Please Insert Company Id Here:</h3></label>
+<!-- <label><h3>Please Insert Company Id Here:</h3></label>
 <input
   type="number"
   id="id"
@@ -7,7 +7,7 @@
   placeholder="1,2,3,4.."
 />
 
-<button (click)="onsearch()">Search</button>
+<button (click)="onsearch()">Search</button> -->
 
 <br /><br />
 <table>
@@ -23,15 +23,13 @@
     <th>Messege</th>
   </tr>
 
-  <tr *ngFor="let c of coupons">
+    <tr *ngFor="let c of coupons">
     <td>{{ c.id }}</td>
-    <td>
-      {{ c.title }}
-    </td>
+    <td>{{ c.title }}</td>
     <td><img [src]="c.picture" alt="picture" /></td>
     <td>{{ c.amount }}</td>
     <td>{{ c.price }}</td>
-    <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td>
+    <td>{{ c.startDate }}</td>
     <td>{{ c.endDate }}</td>
     <td>{{ c.type }}</td>
     <td>{{ c.msg }}</td>
