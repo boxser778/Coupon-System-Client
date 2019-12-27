@@ -35,6 +35,8 @@ import { CustomerCouponTypeComponent } from './components/coupon Options/custome
 import { AllIncomeComponent } from './components/Income Options/viewallincome/allincome.component';
 import { CustomerIncomeComponent } from './components/customer Options/customer-income/customer-income.component';
 import { CompanyIncomeComponent } from './components/company Options/company-income/company-income.component';
+import { IncomeByCompanyIdComponent } from './components/Income Options/income-by-company-id/incomebycompanyid.component';
+import { IncomeByCustomerIdComponent } from './components/Income Options/income-by-customer-id/incomebycustomerid.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { CompanyIncomeComponent } from './components/company Options/company-inc
     CustomerCouponTypeComponent,
     AllIncomeComponent,
     CustomerIncomeComponent,
-    CompanyIncomeComponent
+    CompanyIncomeComponent,
+    IncomeByCompanyIdComponent,
+    IncomeByCustomerIdComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

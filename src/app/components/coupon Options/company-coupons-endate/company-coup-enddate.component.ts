@@ -13,6 +13,7 @@ import { LoginServiceService } from 'src/services/loginServiceService';
     providers: [EnumToArrayPipe]
   })
   export class CompanyCouponEndDateComponent {
+  endDate: string;
 
     
     constructor(private companyService: CompanysService, private router: Router, public loginService:LoginServiceService) {}
@@ -20,16 +21,19 @@ import { LoginServiceService } from 'src/services/loginServiceService';
     public companyid:number;
     public coupons: Coupon[];
     public chosenEndDate:string;
+    public coupon:Coupon;
 
 
     public onSearch() {
             this.updateCouponsByEndDate(dateStringToNumber(this.chosenEndDate));
+           
           }
         
           private updateCouponsByEndDate(endDate: number) {
             this.companyService.getCouponByEndDate(this.loginService.id,endDate).subscribe(coupons => {
               this.coupons = coupons;
               console.log(this.coupons);
+              this.coupon.endDate = dateStringToNumber(this.endDate);
             }),
               err => {
                 alert(err.message);

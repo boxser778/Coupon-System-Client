@@ -30,6 +30,8 @@ import { CustomerCouponTypeComponent } from './components/coupon Options/custome
 import { AllIncomeComponent } from './components/Income Options/viewallincome/allincome.component';
 import { CustomerIncomeComponent } from './components/customer Options/customer-income/customer-income.component';
 import { CompanyIncomeComponent } from './components/company Options/company-income/company-income.component';
+import { IncomeByCompanyIdComponent } from './components/Income Options/income-by-company-id/incomebycompanyid.component';
+import { IncomeByCustomerIdComponent } from './components/Income Options/income-by-customer-id/incomebycustomerid.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -46,7 +48,9 @@ const routes: Routes = [
       { path: "customerbyid", component: GetCustomerByIdComponent },
       { path: "deleteCompany", component: DeleteCompanyComponent },
       { path: "deleteCustomer", component: DeleteCustomerComponent },
-      { path: "allincome", component: AllIncomeComponent }
+      { path: "allincome", component: AllIncomeComponent },
+      { path: "viewallcompanyincomebyid", component: IncomeByCompanyIdComponent },
+      { path: "viewallcustomerincomebyid", component: IncomeByCustomerIdComponent }
     ]
   },
   {

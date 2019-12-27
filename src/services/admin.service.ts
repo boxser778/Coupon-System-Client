@@ -78,4 +78,12 @@ export class AdminService {
   public allIncome(): Observable<Income[]> {
     return this.httpClient.get<Income[]>(`${SERVER_ADMIN_URL}/viewallincome`);
   }
+
+  public getAllCompanyIncome(companyid:number):Observable<Income[]> {
+    return this.httpClient.get<Income[]>(`${SERVER_ADMIN_URL}/allincomecompany/${companyid}`)
+  }
+  
+  public getAllCustomerIncome(customerid:number):Observable<Income[]> {
+    return this.httpClient.get<Income[]>(`${SERVER_ADMIN_URL}/allincomecustomer/${customerid}`)
+  }
 }
