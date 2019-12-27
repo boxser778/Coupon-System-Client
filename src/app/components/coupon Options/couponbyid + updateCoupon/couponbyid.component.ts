@@ -31,7 +31,11 @@ export class CouponbyidComponent {
         .getOneCoupon(this.loginService.id, this.couponid)
         .subscribe(coupon => {
           this.coupon = coupon;
+          alert("For You Information Every Update Will Cost You 10 Ponints")
           console.log(this.coupon);
+          if (coupon === null) {
+            alert("there is not such an coupon id")
+          }
         }),
         err => {
           alert(err.message);
@@ -46,7 +50,7 @@ export class CouponbyidComponent {
         coupon => {
           alert("Coupon has been updated!");
 
-          this.router.navigate(["company/coupons"]);
+          // this.router.navigate(["company/coupons"]);
         },
         err => alert(err.message)
       );

@@ -28,6 +28,8 @@ import { CompanyCouponEndDateComponent } from './components/coupon Options/compa
 import { CustomerCouponPriceComponent } from './components/coupon Options/customer-coupons-by-price/customer-coup-price.component';
 import { CustomerCouponTypeComponent } from './components/coupon Options/customer-coupons-by-type/customer-coup-type.component';
 import { AllIncomeComponent } from './components/Income Options/viewallincome/allincome.component';
+import { CustomerIncomeComponent } from './components/customer Options/customer-income/customer-income.component';
+import { CompanyIncomeComponent } from './components/company Options/company-income/company-income.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -59,7 +61,8 @@ const routes: Routes = [
       { path: "companybyid", component: GetCompanyByIdComponent },
       { path: "couponbyid", component: CouponbyidComponent },
       { path: "createCoupon", component: AddCouponComponent },
-      { path: "deleteCoupon", component: DeleteCouponComponent }
+      { path: "deleteCoupon", component: DeleteCouponComponent },
+      { path: "viewyourincomecompany", component: CompanyIncomeComponent}
     ]
   },
   {
@@ -70,7 +73,8 @@ const routes: Routes = [
       { path: "customercoupons", component: CustomerCouponsComponent },
       { path: "couponbyprice", component: CustomerCouponPriceComponent },
       { path: "couponbytype", component: CustomerCouponTypeComponent },
-      { path: "purchaseCoupon", component: PurchaseCouponComponent }
+      { path: "purchaseCoupon", component: PurchaseCouponComponent },
+      { path: "viewyourincomecustomer" , component: CustomerIncomeComponent}
     ]
   },
 

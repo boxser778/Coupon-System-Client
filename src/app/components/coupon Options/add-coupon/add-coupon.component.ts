@@ -31,13 +31,12 @@ export class AddCouponComponent {
 
   public addCoupon(): void {
       this.coupon.endDate = dateStringToNumber(this.endDate);
-    
         this.companyService
         .addCoupon(this.coupon,this.loginService.id)
         .subscribe(
           () => {
             alert("Coupon has been successfully Added.");
-                  this.router.navigate(["rest/company/coupons"]);
+                  this.router.navigate(["company/coupons"]);
           },
         
           () => alert("Coupon Was Created")

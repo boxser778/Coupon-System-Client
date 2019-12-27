@@ -4,11 +4,11 @@ import { NgForm } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
-import { ResponseCodes } from "src/models/ResponseCodes";
 import { LoginServiceService } from "src/services/loginServiceService";
 import { LoginTestService } from "src/app/services/login-test.service";
 import { User } from "src/models/user";
 import { LoginResult } from "src/models/login-result";
+import { ResponseCodes } from 'src/models/ResponseCodes';
 
 @Component({
   selector: "app-login",

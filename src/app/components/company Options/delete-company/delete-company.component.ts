@@ -18,6 +18,9 @@ export class DeleteCompanyComponent {
     this.adminService.getOneCompany(this.chosenCompanyId).subscribe(company => {
       this.company = company;
       console.log(this.company);
+      if (company === null) {
+        alert("there is not such an company id")
+      }
     }),
       err => {
         alert(err.message);

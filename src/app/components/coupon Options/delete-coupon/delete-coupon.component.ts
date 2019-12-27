@@ -22,6 +22,9 @@ export class DeleteCouponComponent {
     this.companyService.getOneCoupon(this.loginService.id,this.chosenCouponId).subscribe(coupon => {
       this.coupon = coupon;
       console.log(this.coupon);
+      if (coupon === null) {
+        alert("there is not such an coupon id")
+      }
     }),
       err => {
         alert(err.message);
@@ -33,7 +36,7 @@ export class DeleteCouponComponent {
     this.companyService.deleteCoupon(this.loginService.id,this.chosenCouponId).subscribe(
       () => {
         alert("Company has been successfully deleted");
-        this.router.navigate(["company/coupons"]);
+        this.router.navigate(["company"]);
       },
       err => alert(err.message)
     );

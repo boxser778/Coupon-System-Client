@@ -16,26 +16,29 @@ import { CompanysService } from "src/services/company.service";
 export class PurchaseCouponComponent {
   public customerId: number;
   public chosenCouponId: number;
-  public coupon:Coupon;
-  public companyId:number;
+  public coupon: Coupon;
+  public companyId: number;
 
-  constructor(private customerService: CustomersService,private loginService:LoginServiceService) {}
-
-  public buyCoupon(): void {
-  // if (this.loginService.isCustomer()) {
-    this.customerService.getOneCoupon(this.loginService.id,this.chosenCouponId).subscribe(coupon => {
-      this.coupon = coupon;
-      console.log(coupon);
-      this.customerService.purchaseCoupon(this.loginService.id,this.companyId,coupon).subscribe(() =>
-      () => alert("Coupon was created!"))
-    }),
-    err => {
-      alert(err.message);
-      this.coupon = undefined;
-    };
-
-  
+  constructor(
+    private customerService: CustomersService,
+    private loginService: LoginServiceService
+  ) {}
+  public searchCoupon() {
+    this.customerService
+      .getOneCouponFromAllCoupons(this.chosenCouponId)
+      .subscribe(coupon => {
+        this.coupon = coupon;
+        alert("You will have to pay by the coupon price");
+      });
   }
-  // }
-}
 
+  public buyCoupon() {
+    this.customerService
+      .purchaseCoupon(this.loginService.id, this.coupon)
+      .subscribe(coupon => {
+        this.coupon = coupon;
+        console.log(coupon);
+        alert("You Purchase Coupon!");
+      });
+  }
+}

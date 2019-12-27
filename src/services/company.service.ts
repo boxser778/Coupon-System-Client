@@ -6,7 +6,7 @@ import { Coupon } from "src/models/coupon";
 import { couponType } from "src/models/couponType";
 import { SERVER_COMPANY_URL } from 'src/app/const';
 import { LoginServiceService } from './loginServiceService';
-import { UrlsServiceService } from './UrlsServiceService';
+import { Income } from 'src/models/income';
 
 const COMPANY_SERVER_URL = `${SERVER_COMPANY_URL}`;
 
@@ -14,7 +14,7 @@ const COMPANY_SERVER_URL = `${SERVER_COMPANY_URL}`;
   providedIn: "root"
 })
 export class CompanysService {
-  public constructor(private httpClient: HttpClient,private loginService:LoginServiceService,private urlsService:UrlsServiceService) {}
+  public constructor(private httpClient: HttpClient,private loginService:LoginServiceService) {}
 
   public addCoupon(coupon: Coupon,id:number): Observable<Coupon> {
     return this.httpClient.post<Coupon>(`${COMPANY_SERVER_URL}/coupon/${id}` , coupon, {
@@ -52,6 +52,10 @@ export class CompanysService {
 
   public getOneCoupon(companyid: number,couponid:number): Observable<Coupon> {
     return this.httpClient.get<Coupon>(`${COMPANY_SERVER_URL}/coupon/${companyid}/${couponid}`);
+  }
+
+  public getAllCompanyIncome(companyid:number):Observable<Income[]> {
+    return this.httpClient.get<Income[]>(`${COMPANY_SERVER_URL}/allincomecompany/${companyid}`)
   }
 
 }

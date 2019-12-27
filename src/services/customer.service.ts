@@ -5,6 +5,7 @@ import { SERVER_CUSTOMER_URL, SERVER_ADMIN_URL } from 'src/app/const';
 import { Coupon } from 'src/models/coupon';
 import { couponType } from 'src/models/couponType';
 import { Income } from 'src/models/income';
+import { Company } from 'src/models/company';
 
 const COUPON_SERVER_URL = `${SERVER_CUSTOMER_URL}`;
 @Injectable({
@@ -26,19 +27,20 @@ export class CustomersService{
       }
   
 
-
-
-      public purchaseCoupon(customerid:number,companyid:number,coupon:Coupon): Observable<Coupon> {
-        return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/${customerid}/${companyid}`, coupon);
+      public getCompanyById(companyid:number): Observable<Company> {
+        return this.httpClient.get<Company>(`${COUPON_SERVER_URL}/customer/${companyid}`);
       }
+
+      public purchaseCoupon(customerid:number,coupon:Coupon): Observable<Coupon> {
+        return this.httpClient.post<Coupon>(`${COUPON_SERVER_URL}/coupon/${customerid}/${coupon.id}`,coupon);
+      }                                   
       
-      public getOneCoupon(companyid: number,couponid:number): Observable<Coupon> {
-        return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${companyid}/${couponid}`);
+      public getOneCouponFromAllCoupons(couponid:number): Observable<Coupon> {
+        return this.httpClient.get<Coupon>(`${COUPON_SERVER_URL}/coupon/${couponid}`);
       }
 
-      public customerIncomeByName(customerName:String):Observable<Income[]> {
-        return this.httpClient.get<Income[]>(`${COUPON_SERVER_URL}/customerincome/${customerName}`)
+      public getAllCustomerIncome(customerid:number):Observable<Income[]> {
+        return this.httpClient.get<Income[]>(`${COUPON_SERVER_URL}/allincomecustomer/${customerid}`)
       }
-  
 
 }

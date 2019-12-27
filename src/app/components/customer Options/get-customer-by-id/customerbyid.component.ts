@@ -26,12 +26,15 @@ import { Coupon } from 'src/models/coupon';
           this.adminService.getOneCustomer(this.chosenCustomerId).subscribe(customer => {
             this.customer = customer;
             console.log(this.customer);
+            if (customer === null) {
+              alert("there is not such an customer id")
+            }
           }),
             err => {
               alert(err.message);
               this.customer = undefined;
             };   
-  
+          
   }
       }
   public updateCustomer(): void {

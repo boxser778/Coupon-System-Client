@@ -1,0 +1,27 @@
+<h2>Press here to see your total income</h2>
+
+<button (click)="onSearch()">Income</button>
+
+<br /><br />
+
+<table>
+  <div>
+    <tr>
+      <th>Income ID</th>
+      <th>Your ID</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>price</th>
+    </tr>
+
+    <tr *ngFor="let i of incomes">
+      <td>{{ i.id }}</td>
+      <td>{{ i.customerid }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.description }}</td>
+      <td>{{ i.price }}</td>
+    </tr>
+  </div>
+</table>

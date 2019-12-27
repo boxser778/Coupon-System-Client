@@ -17,6 +17,9 @@ export class DeleteCustomerComponent {
     this.adminService.getOneCustomer(this.chosenCustomerId).subscribe(customer => {
       this.customer = customer;
       console.log(this.customer);
+      if (customer === null) {
+        alert("there is not such an customer id")
+      }
     }),
       err => {
         alert(err.message);
@@ -28,7 +31,7 @@ export class DeleteCustomerComponent {
     this.adminService.deleteCustomer(this.customer.id).subscribe(
       () => {
         alert("Customer has been successfully deleted");
-        this.router.navigate(["admin/customers"]);
+        this.router.navigate(["/admin/companys"]);
       },
 
       err => alert(err.message)
