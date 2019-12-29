@@ -1,14 +1,9 @@
 <label><h3>Please Choose The Wanted Coupon Type:</h3></label>
-<!-- <select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
-  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{c.value}}</option>
-</select> -->
-<input
-  type="text"
-  type="type"
-  [(ngModel)]="chosenType"
-  [ngModelOptions]="{ standalone: true }"
-  placeholder="FOOD,DRINKS.."
-/>
+
+<select [(ngModel)]="chosenType" [ngModelOptions]="{ standalone: true }">
+  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
+</select>
+
 <br /><br />
 <button (click)="onSearch()">Search</button>
 
@@ -20,7 +15,6 @@
       <th>Id</th>
       <th>Title</th>
       <th>Picture</th>
-      <th>Amount</th>
       <th>Price</th>
       <th>Start Date</th>
       <th>End Date</th>
@@ -32,7 +26,6 @@
       <td>{{ c.id }}</td>
       <td>{{ c.title }}</td>
       <td><img [src]="c.picture" alt="picture" /></td>
-      <td>{{ c.amount }}</td>
       <td>{{ c.price }}</td>
       <!-- <td>{{ c.startDate | date: "dd/MM/yyyy" }}</td> -->
       <td>{{ c.startDate }}</td>

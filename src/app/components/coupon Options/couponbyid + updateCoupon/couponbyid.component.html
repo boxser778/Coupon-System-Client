@@ -37,10 +37,10 @@
 
 <form *ngIf="coupon">
   <h3>Choose New End Date To Your Coupon:</h3>
-  <input type="date" EndDate="endDate" [(ngModel)]="coupon.endDate" [ngModelOptions]="{ standalone: true }" placeholder="endDate(ex:01-01-0001)..."/>
+  <input type="date" [ngModel]="coupon.endDate" (ngModelChange)="setEndDate($event)" [ngModelOptions]="{ standalone: true }" placeholder="endDate(ex:01-01-0001)..."/>
   <br />
   <h3>Choose New Price To Your Coupon:</h3>
-  <input type="text" Price="price" [(ngModel)]="coupon.price" [ngModelOptions]="{ standalone: true }" placeholder="price..." />
+  <input type="text" [(ngModel)]="coupon.price" [ngModelOptions]="{ standalone: true }" placeholder="price..." />
 
   <br />
   <br />

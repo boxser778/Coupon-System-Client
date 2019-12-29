@@ -1,14 +1,17 @@
 <label><h3>Please Choose The Wanted Coupon Type:</h3></label>
-<!-- <select [(ngModel)]="coupon.type" [ngModelOptions]="{ standalone: true }">
-  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
-</select> -->
-<input
+
+<!-- <input
   type="text"
   type="type"
   [(ngModel)]="chosenType"
   [ngModelOptions]="{ standalone: true }"
   placeholder="FOOD,DRINKS.."
-/>
+/> -->
+
+<select [(ngModel)]="chosenType" [ngModelOptions]="{ standalone: true }">
+  <option *ngFor="let c of couponType | keyvalue" [ngValue]="c.key">{{ c.value }}</option>
+</select>
+
 <br /><br />
 <button (click)="onSearch()">Search</button>
 

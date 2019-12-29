@@ -24,12 +24,10 @@ export class CouponsComponent implements OnInit {
       .getAllCoupons()
       .subscribe(coupons => {
         return (this.coupons = coupons);
-      });
-      
-    console.log(this.coupons);
-    err => alert(err.message);
+      },
+      err=>alert(err.message));
+
   }
-  
 }
 
 }

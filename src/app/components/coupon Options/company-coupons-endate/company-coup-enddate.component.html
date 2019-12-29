@@ -1,9 +1,11 @@
-<label><h3>Please Choose The Wanted End Date Here: </h3></label>
-<input type="date" endDate="endDate" [(ngModel)]="chosenEndDate" [ngModelOptions]="{ standalone: true }" placeholder="endDate.." />
-<br><br>
-<button (click)="onSearch()">Search</button>
+<label><h3>Please Choose The Wanted End Date Here:</h3></label>
+<!-- <input
+  type="date"
+  [(ngModel)]="chosenEndDate"
+  [ngModelOptions]="{ standalone: true }"
+  placeholder="endDate.."
+/> -->
 
-<br /><br />
 
 <table>
   <div>
@@ -32,3 +34,13 @@
     </tr>
   </div>
 </table>
+
+  <h3>Choose New End Date To Your Coupon:</h3>
+  <input type="date" [(ngModel)]="chosenEndDate" [ngModelOptions]="{ standalone: true }" placeholder="endDate(ex:01-01-0001)..."/>
+  <br />
+
+<br /><br />
+<button (click)="onSearch()">Search</button>
+
+<br /><br />
+

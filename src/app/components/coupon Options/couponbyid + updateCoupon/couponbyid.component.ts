@@ -60,4 +60,9 @@ export class CouponbyidComponent {
       }
     }
   }
+
+  public setEndDate(date: string) {
+    const splittedDate = date.split("-");
+    this.coupon.endDate = splittedDate.reverse().join("-");
+  }
 }
